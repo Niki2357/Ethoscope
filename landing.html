@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethoscope Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+        }
+        .sidebar {
+            width: 15%; /* Smaller contact list */
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 0.5rem;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 0.9rem;
+        }
+        .content {
+            width: 55%; /* Main content in the middle */
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+        .section {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1rem;
+        }
+        .section p, .section ul {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        .section ul li {
+            margin-bottom: 0.5rem;
+        }
+        .section ul li span {
+            color: #007bff;
+        }
+        .recommendations li {
+            margin-bottom: 0.5rem;
+        }
+        .recommendations li a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .chatbot {
+            width: 30%; /* Right column for chatbot */
+            background-color: #fff;
+            border-left: 1px solid #ddd;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .chatbot h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        iframe {
+            border: none;
+            flex-grow: 1; /* Ensure iframe takes remaining space */
+        }
+    </style>
+</head>
+<body>
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+        <h2>Ethoscope</h2>
+        <ul>
+            <li><a href="#">Landing Page</a></li>
+            <li><a href="#">Athena Zhong</a></li>
+            <li><a href="#">Chen Peng</a></li>
+            <li><a href="#">Lucy Lu</a></li>
+            <li><a href="#">Niki Hu</a></li>
+            <li><a href="#">Lila Montgomery</a></li>
+            <li><a href="#">Evan Carter</a></li>
+            <li><a href="#">Sophia Bennett</a></li>
+            <li><a href="#">Liam Harrison</a></li>
+            <li><a href="#">Olivia Reed</a></li>
+        </ul>
+        <button style="width: 100%; padding: 0.5rem; margin-top: 1rem; border: none; background-color: #f5d36d; border-radius: 8px; cursor: pointer;">IMPORT</button>
+    </div>
+
+    <!-- Middle Content -->
+    <div class="content">
+        <div class="section">
+            <h3>It’s February 1, 2025 🍀</h3>
+            <p>Let’s see what’s on your radar today!</p>
+        </div>
+
+        <div class="section">
+            <h3>Reminders</h3>
+            <ul>
+                <li>🎂 Prepare a birthday for <span>@Athena Zhong</span></li>
+                <li>📞 Call <span>@Brianna Lin</span> at 9 PM today.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Updates</h3>
+            <ul>
+                <li>🎉 It’s <span>@Athena Zhong</span>'s 22nd birthday!</li>
+                <li>💼 <span>@Joseph Walxim</span> has left Goldman Sachs and started a new job at Sequoia!</li>
+                <li>🌍 <span>@Steven Walxim</span> has relocated from New York City to Singapore.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Recommendations</h3>
+            <ul class="recommendations">
+                <li><a href="#">@Lisa Li</a> - PhD Student at Harvard</li>
+                <li><a href="#">@Emily Yu</a> - APM at Google</li>
+                <li><a href="#">@Fiona Jiang</a> - PM at BAM</li>
+            </ul>
+            <p><a href="#">Click refresh for more people recommended to reconnect!</a></p>
+        </div>
+    </div>
+
+    <!-- Right Chatbot -->
+    <div class="chatbot">
+        <h3>Chat with ChatGPT</h3>
+        <iframe 
+            src="https://chat.openai.com/chat" 
+            title="ChatGPT"
+            allow="microphone; camera"
+            style="width: 100%; height: calc(100% - 2rem);">
+        </iframe>
+    </div>
+</body>
+</html>
