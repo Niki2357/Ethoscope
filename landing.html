@@ -13,32 +13,62 @@
             display: flex;
         }
         .sidebar {
-            width: 15%; /* Smaller contact list */
+            width: 15%;
             background-color: #fff;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             height: 100vh;
             padding: 1rem;
             overflow-y: auto;
         }
-        .sidebar h2 {
-            font-size: 1.2rem;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
             margin-bottom: 1rem;
-            color: #333;
         }
-        .sidebar ul {
+        .contact-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
-        .sidebar ul li {
-            margin-bottom: 0.5rem;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 0.6rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
         }
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #007bff;
-            font-size: 0.9rem;
+        .contact-item img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
         }
+        .contact-item span {
+            font-size: 1rem;
+            color: #333;
+        }
+        .contact-item:hover {
+            background-color: #f0f0f0;
+        }
+        .contact-item.selected {
+            background-color: #f5d36d;
+            font-weight: bold;
+        }
+        .import-button {
+            width: 100%;
+            padding: 0.7rem;
+            margin-top: 1rem;
+            border: none;
+            background-color: #f5d36d;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
         .content {
-            width: 55%; /* Main content in the middle */
+            width: 55%;
             padding: 2rem;
             background-color: #f5f5f5;
         }
@@ -46,33 +76,42 @@
             background-color: #fff;
             padding: 1rem;
             border-radius: 8px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .section h3 {
-            margin: 0 0 1rem 0;
-            font-size: 1rem;
+            margin: 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
         }
-        .section p, .section ul {
-            margin: 0.5rem 0;
+        .sub-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .sub-item:last-child {
+            border-bottom: none;
+        }
+        .toggle-btn {
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 0.5rem;
+        }
+        .sub-content {
+            display: none;
+            padding: 0.5rem 1rem;
             font-size: 0.9rem;
             color: #333;
-        }
-        .section ul li {
-            margin-bottom: 0.5rem;
-        }
-        .section ul li span {
-            color: #007bff;
-        }
-        .recommendations li {
-            margin-bottom: 0.5rem;
-        }
-        .recommendations li a {
-            color: #007bff;
-            text-decoration: none;
+            background: #f9f9f9;
+            border-left: 3px solid #ddd;
         }
         .chatbot {
-            width: 30%; /* Right column for chatbot */
+            width: 30%;
             background-color: #fff;
             border-left: 1px solid #ddd;
             padding: 1rem;
@@ -80,67 +119,92 @@
             flex-direction: column;
             height: 100vh;
         }
-        .chatbot h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
-        }
         iframe {
             border: none;
-            flex-grow: 1; /* Ensure iframe takes remaining space */
+            flex-grow: 1;
         }
     </style>
 </head>
 <body>
     <!-- Left Sidebar -->
     <div class="sidebar">
-        <h2>Ethoscope</h2>
-        <ul>
-            <li><a href="#">Landing Page</a></li>
-            <li><a href="#">Athena Zhong</a></li>
-            <li><a href="#">Chen Peng</a></li>
-            <li><a href="#">Lucy Lu</a></li>
-            <li><a href="#">Niki Hu</a></li>
-            <li><a href="#">Lila Montgomery</a></li>
-            <li><a href="#">Evan Carter</a></li>
-            <li><a href="#">Sophia Bennett</a></li>
-            <li><a href="#">Liam Harrison</a></li>
-            <li><a href="#">Olivia Reed</a></li>
+        <div class="logo">📊 Ethoscope</div>
+        <ul class="contact-list">
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Athena"><span>Athena Zhong</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Chen"><span>Chen Peng</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Lucy"><span>Lucy Lu</span></li>
+            <li class="contact-item selected"><img src="https://via.placeholder.com/35" alt="Niki"><span>Niki Hu</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Lila"><span>Lila Montgomery</span></li>
         </ul>
-        <button style="width: 100%; padding: 0.5rem; margin-top: 1rem; border: none; background-color: #f5d36d; border-radius: 8px; cursor: pointer;">IMPORT</button>
+        <button class="import-button">IMPORT</button>
     </div>
 
     <!-- Middle Content -->
     <div class="content">
         <div class="section">
-            <h3>It’s February 1, 2025 🍀</h3>
-            <p>Let’s see what’s on your radar today!</p>
+            <h3>📚 Education</h3>
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>🏫 Kent School (2019-2023)</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>📍 Kent, CT, USA</p>
+                <p>🎓 High School Diploma</p>
+            </div>
+
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>🎓 Georgia Institute of Technology (2023-Current)</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>📍 Atlanta, GA, USA</p>
+                <p>📚 Major: Computer Science</p>
+            </div>
         </div>
 
         <div class="section">
-            <h3>Reminders</h3>
-            <ul>
-                <li>🎂 Prepare a birthday for <span>@Athena Zhong</span></li>
-                <li>📞 Call <span>@Brianna Lin</span> at 9 PM today.</li>
-            </ul>
+            <h3>💼 Experience</h3>
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>📊 Bianfeng Games (2023-2024)</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>💻 Data Analysis Intern</p>
+                <p>📍 Remote</p>
+            </div>
+
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>👨‍💻 Georgia Institute of Technology (2025-Current)</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>🎓 CS 3510 TA</p>
+                <p>📍 Atlanta, GA, USA</p>
+            </div>
         </div>
 
         <div class="section">
-            <h3>Updates</h3>
-            <ul>
-                <li>🎉 It’s <span>@Athena Zhong</span>'s 22nd birthday!</li>
-                <li>💼 <span>@Joseph Walxim</span> has left Goldman Sachs and started a new job at Sequoia!</li>
-                <li>🌍 <span>@Steven Walxim</span> has relocated from New York City to Singapore.</li>
-            </ul>
+            <h3>🔄 Updates</h3>
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>🚀 Starting a new startup project (Dec. 2024)</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>📌 Training NLP models for MBTI classification.</p>
+                <p>🤝 Taking the role of a startup co-founder.</p>
+            </div>
         </div>
 
         <div class="section">
-            <h3>Recommendations</h3>
-            <ul class="recommendations">
-                <li><a href="#">@Lisa Li</a> - PhD Student at Harvard</li>
-                <li><a href="#">@Emily Yu</a> - APM at Google</li>
-                <li><a href="#">@Fiona Jiang</a> - PM at BAM</li>
-            </ul>
-            <p><a href="#">Click refresh for more people recommended to reconnect!</a></p>
+            <h3>🧠 Personality</h3>
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>📊 Introvert vs. Extrovert Analysis</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>📈 Personality trends based on meetings & social interactions.</p>
+                <img src="chart_placeholder.png" alt="Personality Chart" width="100%">
+            </div>
         </div>
     </div>
 
@@ -154,5 +218,20 @@
             style="width: 100%; height: calc(100% - 2rem);">
         </iframe>
     </div>
+
+    <script>
+        function toggleSubContent(item) {
+            const content = item.nextElementSibling;
+            const toggleBtn = item.querySelector('.toggle-btn');
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                toggleBtn.innerHTML = "▼";
+            } else {
+                content.style.display = "none";
+                toggleBtn.innerHTML = "▶";
+            }
+        }
+    </script>
 </body>
 </html>
