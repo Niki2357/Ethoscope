@@ -52,7 +52,7 @@
             background-color: #f0f0f0;
         }
         .contact-item.selected {
-            background-color: #f5d36d;
+            background-color: #ffe8cc;
             font-weight: bold;
         }
         .import-button {
@@ -60,7 +60,7 @@
             padding: 0.7rem;
             margin-top: 1rem;
             border: none;
-            background-color: #f5d36d;
+            background-color: #ffe8cc;
             border-radius: 8px;
             cursor: pointer;
             font-size: 1rem;
@@ -92,7 +92,7 @@
             cursor: pointer;
             padding: 0.5rem;
             font-size: 1rem;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #FFF8F0;
         }
         .sub-item:last-child {
             border-bottom: none;
@@ -108,7 +108,7 @@
             font-size: 0.9rem;
             color: #333;
             background: #f9f9f9;
-            border-left: 3px solid #ddd;
+            border-left: 3px solid #FFF8F0;
         }
         .chatbot {
             width: 30%;
@@ -119,6 +119,7 @@
             flex-direction: column;
             height: 100vh;
         }
+        /* .contact-item { background-color: #ffcccc; } */
         iframe {
             border: none;
             flex-grow: 1;
@@ -135,6 +136,19 @@
             <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Lucy"><span>Lucy Lu</span></li>
             <li class="contact-item selected"><img src="https://via.placeholder.com/35" alt="Niki"><span>Niki Hu</span></li>
             <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Lila"><span>Lila Montgomery</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Evan"><span>Evan Carter</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Sophia"><span>Sophia Bennett</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Liam"><span>Liam Harrison</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Olivia"><span>Olivia Reed</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Noah"><span>Noah Anderson</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Ava"><span>Ava Collins</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Mia"><span>Mia Sanders</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="James"><span>James Porter</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Amelia"><span>Amelia Brooks</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Charlotte"><span>Charlotte Morgan</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Ella"><span>Ella Carter</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Scarlett"><span>Scarlett Hayes</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Alexander"><span>Alexander Cooper</span></li>
         </ul>
         <button class="import-button">IMPORT</button>
     </div>
@@ -142,6 +156,31 @@
     <!-- Middle Content -->
     <div class="content">
         <div class="section">
+            <div class="section">
+                <div class="profile-header">
+                    <!-- Profile Image -->
+                    <img src="images/Niki.JPG" alt="Profile Picture" class="profile-picture", style="width: 100px; height: 100px;">
+            
+                    <!-- Name and Contact Info -->
+                    <div class="profile-info">
+                        <h1>Niki Hu</h1>
+                        <p class="contact-details">
+                            (123) 456-7890 <br>
+                            <a href="mailto:niki.hu04@gmail.com">niki.hu04@gmail.com</a>
+                        </p>
+            
+                        <!-- Social Media Icons -->
+                        <div class="social-icons">
+                            <img src="images/instagram.png" alt="Instagram", style="width: 30px; height: 30px;">
+                            <img src="images/linkedin.png" alt="LinkedIn", style="width: 30px; height: 30px;">
+                            <img src="images/x.png" alt="X", style="width: 30px; height: 30px;">
+                            <img src="images/whatsapp.png" alt="WhatsApp", style="width: 30px; height: 30px;">
+                            <img src="images/messenger.png" alt="Messenger", style="width: 30px; height: 30px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <h3>📚 Education</h3>
             <div class="sub-item" onclick="toggleSubContent(this)">
                 <span>🏫 Kent School (2019-2023)</span>
@@ -185,14 +224,33 @@
 
         <div class="section">
             <h3>🔄 Updates</h3>
+
             <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>🚀 Starting a new startup project (Dec. 2024)</span>
+                <p>🚀 Starting a new startup project (Dec. 2024)</p>
                 <span class="toggle-btn">▶</span>
             </div>
             <div class="sub-content">
                 <p>📌 Training NLP models for MBTI classification.</p>
                 <p>🤝 Taking the role of a startup co-founder.</p>
             </div>
+
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <p>👨‍🏫 Taking a new role of CS 3510 TA.</p>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>🎓 Working for Georgia Institute of Technology College of Computing.</p>
+                <p>📖 Second class TAing for.</p>
+            </div>
+
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <p>🎾 Taking a new role of Squash @GT Vice President.</p>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>🏅 Aiming to organize practice sessions and participate in club suqash competitions</p>
+            </div>
+
         </div>
 
         <div class="section">
