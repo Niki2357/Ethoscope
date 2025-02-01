@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Chat Bot Interface</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 13%;
+        background-color: #fff;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        height: 100vh;
+        padding: 1rem;
+        overflow-y: auto;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 1rem;
+    }
+
+    .contact-item:hover {
+      background-color: #f0f0f0;
+    }
+
+    .contact-item.selected {
+      background-color: #ffe8cc;
+      font-weight: bold;
+    }
+
+    .import-button {
+      display: block;
+      margin-top: 1rem;
+      padding: 0.7rem;
+      width: 100%;
+      border: none;
+      background-color: #ffe8cc;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    /* Header */
+    .header {
+      width: 80%;
+      padding: 1rem;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header input[type="text"] {
+      flex-grow: 1;
+      margin-right: 1rem;
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .header button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffe8cc;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Main Content */
+    .main-content {
+      width: 80%;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .chatbot-container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .chatbox {
+      padding: 1rem;
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .chat {
+      padding: 10px 15px;
+      border-radius: 12px;
+      max-width: 70%;
+    }
+
+    .chat-incoming {
+      background: #f1f1f1;
+      align-self: flex-start;
+    }
+
+    .chat-outgoing {
+      background: #ffe8cc;
+      align-self: flex-end;
+    }
+
+    .chat-options {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      position: absolute;
+      bottom: 90px;
+      right: 10px;
+    }
+
+    .option-box {
+      background-color: #ffe8cc;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      color: #333;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .option-box input[type="checkbox"] {
+      accent-color: #ffcc80;
+    }
+
+    .chat-input {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      gap: 0.5rem;
+      background: #fff8e1;
+      border-radius: 20px;
+      margin: 0.5rem 10px;
+    }
+
+    .chat-input textarea {
+      flex: 1;
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      resize: none;
+      background: transparent;
+      font-size: 0.9rem;
+    }
+
+    .chat-input button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #ffe8cc;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .chat-input-icons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .chat-input-icons img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="images/big_logo_black.png" alt="Logo" style="width: 200px; height: 46px">
+
+        </div>
+        <ul class="contact-list">
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Athena"><span>Athena Zhong</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Chen"><span>Chen Peng</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Lucy"><span>Lucy Lu</span></li>
+            <li class="contact-item selected"><img src="https://via.placeholder.com/35" alt="Niki"><span>Niki Hu</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Lila"><span>Lila Montgomery</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Evan"><span>Evan Carter</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Sophia"><span>Sophia Bennett</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Liam"><span>Liam Harrison</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Olivia"><span>Olivia Reed</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Noah"><span>Noah Anderson</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Ava"><span>Ava Collins</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Mia"><span>Mia Sanders</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="James"><span>James Porter</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Amelia"><span>Amelia Brooks</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Charlotte"><span>Charlotte Morgan</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Ella"><span>Ella Carter</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Scarlett"><span>Scarlett Hayes</span></li>
+            <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Alexander"><span>Alexander Cooper</span></li>
+        </ul>
+        <button class="import-button">IMPORT</button>
+    </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <input type="text" placeholder="YC Co-Founder">
+      <button>SEARCH</button>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+      <!-- Options Above Chat Input -->
+      <div class="chat-options">
+        <div class="option-box">
+          Click for including in personality database
+          <input type="checkbox">
+        </div>
+        <div class="option-box">
+          + Add the contact(s) to sync with
+        </div>
+      </div>
+
+      <!-- Chatbox -->
+      <div class="chatbox" id="chatbox">
+        <div class="chat chat-incoming">Hello! How can I help you today?</div>
+      </div>
+
+      <!-- Chat Input -->
+      <div class="chat-input" id="chatInput">
+        <div class="chat-input-icons">
+          <img src="https://via.placeholder.com/24?text=📎" alt="Attach" title="Attach File">
+          <img src="https://via.placeholder.com/24?text=🎤" alt="Voice" title="Voice Input">
+        </div>
+        <textarea id="chatTextarea" placeholder="Drop your document here or type..."></textarea>
+        <button id="sendBTN">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const chatbox = document.getElementById('chatbox');
+    const chatTextarea = document.getElementById('chatTextarea');
+
+    // Drag-and-drop functionality
+    chatTextarea.addEventListener('dragover', (e) => e.preventDefault());
+    chatTextarea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        const outgoing = document.createElement('div');
+        outgoing.className = 'chat chat-outgoing';
+        outgoing.textContent = `File uploaded: ${file.name}`;
+        chatbox.appendChild(outgoing);
+      }
+    });
+
+    // Send message
+    document.getElementById('sendBTN').addEventListener('click', () => {
+      const message = chatTextarea.value.trim();
+      if (message) {
+        const outgoing = document.createElement('div');
+        outgoing.className = 'chat chat-outgoing';
+        outgoing.textContent = message;
+        chatbox.appendChild(outgoing);
+        chatTextarea.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
