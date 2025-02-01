@@ -100,12 +100,13 @@
             font-size: 1rem;
             cursor: pointer;
             margin-left: 0.5rem;
+            color: #FFD31C;
         }
         .sub-content {
             display: none;
             padding: 0.5rem 1rem;
             font-size: 0.9rem;
-            color: #333;
+            color: #FFD31C;
             background: #f9f9f9;
             border-left: 3px solid #FFF8F0;
         }
@@ -325,6 +326,27 @@
         </div>
 
         <div class="section">
+            <h3>📲 Recent Connections</h3>
+            
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>📊 Zoom Meeting (Jan. 15th, 2025)</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>🚀 You gave advice to Niki's startup project on developing a webstie as an AI contact list.</p>
+                <p>📆 You and Niki agreed to meet next week for further discussions.</p>
+            </div>
+
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>📧 Email (Jan. 12th, 2025)</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>📆 You set up a time to meet with Niki to talk about a new startup idea she is working on.</p>
+            </div>
+        </div>
+
+        <div class="section">
             <h3>🧠 Personality</h3>
             <div>
                 <div class="plots-header">
@@ -333,16 +355,11 @@
                 </div>
                 
             </div>
-            <!-- <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>📊 Introvert vs. Extrovert Analysis</span>
-                <span class="toggle-btn">▶</span>
-            </div>
-            <div class="sub-content">
-                <p>📈 Personality trends based on meetings & social interactions.</p>
-                <img src="chart_placeholder.png" alt="Personality Chart" width="100%">
-            </div> -->
+
         </div>
     </div>
+
+    
 
     <!-- Right Chatbot -->
     <div class="chatbot">
