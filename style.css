@@ -1,6 +1,14 @@
 /* General Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 body {
-    font-family: Arial, sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: "Inter", serif;
+    /* font-family: "Roboto", serif; */
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
@@ -226,6 +234,12 @@ body {
     gap: 2rem;
     margin-top: 1rem;
 }
+.button-host {
+    display: flex;
+    justify-content: space-evenly; /* Equal spacing between items and edges */
+    gap: 2rem;
+    margin-top: 1rem;
+}
 .rec-profile {
     text-align: center;
 }
@@ -238,4 +252,8 @@ body {
 .bold_orange {
     color:#E7880B;
     font-weight: bold;
+}
+.big_unbold {
+    font-size: 30px;
+    padding: 0;
 }
