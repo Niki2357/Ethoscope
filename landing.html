@@ -13,7 +13,7 @@
             display: flex;
         }
         .sidebar {
-            width: 15%;
+            width: 13%;
             background-color: #fff;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             height: 100vh;
@@ -21,8 +21,7 @@
             overflow-y: auto;
         }
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            align-self: center;
             margin-bottom: 1rem;
         }
         .contact-list {
@@ -68,7 +67,7 @@
         }
 
         .content {
-            width: 55%;
+            width: 50%;
             padding: 2rem;
             background-color: #f5f5f5;
         }
@@ -119,6 +118,71 @@
             flex-direction: column;
             height: 100vh;
         }
+        .profile-header {
+            display: flex;
+            align-items: center;  /* Align everything vertically */
+            justify-content: space-between;  /* Space out items evenly */
+            padding: 10px;
+            gap: 30px;
+        }
+
+        .plots-header {
+            display: flex;
+            align-items: center;  /* Align everything vertically */
+            justify-content: space-between;  /* Space out items evenly */
+            padding: 10px;
+            gap: 0px;
+        }
+
+        /* Profile Picture */
+        .profile-picture {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Centered Profile Info */
+        .profile-info {
+            text-align: left;
+            flex-grow: 1;  /* Allows this section to take up space */
+        }
+
+        .profile-info h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .contact-details {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 5px;
+            line-height: 1.5;
+        }
+
+        .contact-details a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Social Icons Aligned to the Right */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            align-items: left;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
         /* .contact-item { background-color: #ffcccc; } */
         iframe {
             border: none;
@@ -129,7 +193,10 @@
 <body>
     <!-- Left Sidebar -->
     <div class="sidebar">
-        <div class="logo">📊 Ethoscope</div>
+        <div class="logo">
+            <img src="images/big_logo_black.png" alt="Logo" style="width: 200px; height: 46px">
+
+        </div>
         <ul class="contact-list">
             <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Athena"><span>Athena Zhong</span></li>
             <li class="contact-item"><img src="https://via.placeholder.com/35" alt="Chen"><span>Chen Peng</span></li>
@@ -156,31 +223,32 @@
     <!-- Middle Content -->
     <div class="content">
         <div class="section">
-            <div class="section">
                 <div class="profile-header">
-                    <!-- Profile Image -->
-                    <img src="images/Niki.JPG" alt="Profile Picture" class="profile-picture", style="width: 100px; height: 100px;">
-            
-                    <!-- Name and Contact Info -->
+                    <!-- Profile Image (Left) -->
+                    <img src="images/Niki.JPG" alt="Profile Picture" class="profile-picture">
+                    
+                    <!-- Name and Contact Info (Center) -->
                     <div class="profile-info">
                         <h1>Niki Hu</h1>
                         <p class="contact-details">
                             (123) 456-7890 <br>
                             <a href="mailto:niki.hu04@gmail.com">niki.hu04@gmail.com</a>
                         </p>
-            
-                        <!-- Social Media Icons -->
                         <div class="social-icons">
-                            <img src="images/instagram.png" alt="Instagram", style="width: 30px; height: 30px;">
-                            <img src="images/linkedin.png" alt="LinkedIn", style="width: 30px; height: 30px;">
-                            <img src="images/x.png" alt="X", style="width: 30px; height: 30px;">
-                            <img src="images/whatsapp.png" alt="WhatsApp", style="width: 30px; height: 30px;">
-                            <img src="images/messenger.png" alt="Messenger", style="width: 30px; height: 30px;">
+                            <img src="images/instagram.png" alt="Instagram">
+                            <img src="images/linkedin.png" alt="LinkedIn">
+                            <img src="images/x.png" alt="X">
+                            <img src="images/whatsapp.png" alt="WhatsApp">
+                            <img src="images/messenger.png" alt="Messenger">
                         </div>
                     </div>
+                
+                    <!-- Social Media Icons (Right) -->
+                    
                 </div>
-            </div>
+        </div>
 
+        <div class="section">
             <h3>📚 Education</h3>
             <div class="sub-item" onclick="toggleSubContent(this)">
                 <span>🏫 Kent School (2019-2023)</span>
@@ -200,9 +268,11 @@
                 <p>📚 Major: Computer Science</p>
             </div>
         </div>
+        
 
         <div class="section">
             <h3>💼 Experience</h3>
+            
             <div class="sub-item" onclick="toggleSubContent(this)">
                 <span>📊 Bianfeng Games (2023-2024)</span>
                 <span class="toggle-btn">▶</span>
@@ -225,8 +295,9 @@
         <div class="section">
             <h3>🔄 Updates</h3>
 
+
             <div class="sub-item" onclick="toggleSubContent(this)">
-                <p>🚀 Starting a new startup project (Dec. 2024)</p>
+                <span>🚀 Starting a new startup project (Dec. 2024)</span>
                 <span class="toggle-btn">▶</span>
             </div>
             <div class="sub-content">
@@ -235,7 +306,7 @@
             </div>
 
             <div class="sub-item" onclick="toggleSubContent(this)">
-                <p>👨‍🏫 Taking a new role of CS 3510 TA.</p>
+                <span>👨‍🏫 Taking a new role of CS 3510 TA.</span>
                 <span class="toggle-btn">▶</span>
             </div>
             <div class="sub-content">
@@ -244,7 +315,7 @@
             </div>
 
             <div class="sub-item" onclick="toggleSubContent(this)">
-                <p>🎾 Taking a new role of Squash @GT Vice President.</p>
+                <span>🎾 Taking a new role of Squash @GT Vice President.</span>
                 <span class="toggle-btn">▶</span>
             </div>
             <div class="sub-content">
@@ -255,14 +326,21 @@
 
         <div class="section">
             <h3>🧠 Personality</h3>
-            <div class="sub-item" onclick="toggleSubContent(this)">
+            <div>
+                <div class="plots-header">
+                    <img src="images/plots/IE_labeled.png" alt="Personality Chart 1" style="width: 400px; height: 300px">
+                    <img src="images/plots/openness_labeled.png" alt="Personality Chart 1" style="width: 450px; height: 300px">
+                </div>
+                
+            </div>
+            <!-- <div class="sub-item" onclick="toggleSubContent(this)">
                 <span>📊 Introvert vs. Extrovert Analysis</span>
                 <span class="toggle-btn">▶</span>
             </div>
             <div class="sub-content">
                 <p>📈 Personality trends based on meetings & social interactions.</p>
                 <img src="chart_placeholder.png" alt="Personality Chart" width="100%">
-            </div>
+            </div> -->
         </div>
     </div>
 
