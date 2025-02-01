@@ -4,192 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethoscope Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            display: flex;
-        }
-        .sidebar {
-            width: 13%;
-            background-color: #fff;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            height: 100vh;
-            padding: 1rem;
-            overflow-y: auto;
-        }
-        .logo {
-            align-self: center;
-            margin-bottom: 1rem;
-        }
-        .contact-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            padding: 0.6rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .contact-item img {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        .contact-item span {
-            font-size: 1rem;
-            color: #333;
-        }
-        .contact-item:hover {
-            background-color: #f0f0f0;
-        }
-        .contact-item.selected {
-            background-color: #ffe8cc;
-            font-weight: bold;
-        }
-        .import-button {
-            width: 100%;
-            padding: 0.7rem;
-            margin-top: 1rem;
-            border: none;
-            background-color: #ffe8cc;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-        }
+    <link rel="stylesheet" href="style.css">  <!-- Link to your CSS file -->
 
-        .content {
-            width: 50%;
-            padding: 2rem;
-            background-color: #f5f5f5;
-        }
-        .section {
-            background-color: #fff;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .section h3 {
-            margin: 0;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 0.5rem;
-        }
-        .sub-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            padding: 0.5rem;
-            font-size: 1rem;
-            border-bottom: 1px solid #FFF8F0;
-        }
-        .sub-item:last-child {
-            border-bottom: none;
-        }
-        .toggle-btn {
-            font-size: 1rem;
-            cursor: pointer;
-            margin-left: 0.5rem;
-            color: #FFD31C;
-        }
-        .sub-content {
-            display: none;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
-            color: #FFD31C;
-            background: #f9f9f9;
-            border-left: 3px solid #FFF8F0;
-        }
-        .chatbot {
-            width: 30%;
-            background-color: #fff;
-            border-left: 1px solid #ddd;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-        .profile-header {
-            display: flex;
-            align-items: center;  /* Align everything vertically */
-            justify-content: space-between;  /* Space out items evenly */
-            padding: 10px;
-            gap: 30px;
-        }
-
-        .plots-header {
-            display: flex;
-            align-items: center;  /* Align everything vertically */
-            justify-content: space-between;  /* Space out items evenly */
-            padding: 10px;
-            gap: 0px;
-        }
-
-        /* Profile Picture */
-        .profile-picture {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* Centered Profile Info */
-        .profile-info {
-            text-align: left;
-            flex-grow: 1;  /* Allows this section to take up space */
-        }
-
-        .profile-info h1 {
-            font-size: 1.8rem;
-            margin: 0;
-        }
-
-        .contact-details {
-            font-size: 1rem;
-            color: #666;
-            margin-top: 5px;
-            line-height: 1.5;
-        }
-
-        .contact-details a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        /* Social Icons Aligned to the Right */
-        .social-icons {
-            display: flex;
-            gap: 10px;
-            align-items: left;
-        }
-
-        .social-icons img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .social-icons img:hover {
-            transform: scale(1.1);
-        }
-        /* .contact-item { background-color: #ffcccc; } */
-        iframe {
-            border: none;
-            flex-grow: 1;
-        }
-    </style>
 </head>
 <body>
     <!-- Left Sidebar -->
@@ -359,32 +175,27 @@
         </div>
     </div>
 
-    
 
-    <!-- Right Chatbot -->
-    <div class="chatbot">
-        <h3>Chat with ChatGPT</h3>
-        <iframe 
-            src="https://chat.openai.com/chat" 
-            title="ChatGPT"
-            allow="microphone; camera"
-            style="width: 100%; height: calc(100% - 2rem);">
-        </iframe>
-    </div>
 
-    <script>
-        function toggleSubContent(item) {
-            const content = item.nextElementSibling;
-            const toggleBtn = item.querySelector('.toggle-btn');
+        <div class="chatBot">
+            <header>
+                <h2>ChatBot</h2>
+                <span alt="Close" 
+                      id="cross" 
+                      onclick="cancel()">X</span>
+            </header>
+            <ul class="chatbox">
+                <li class="chat-incoming chat">
+                    <p>Hey! How can I assist you today?</p>
+                </li>
+            </ul>
+            <div class="chat-input">
+                <textarea rows="0" cols="17"
+                          placeholder="Enter a message..."></textarea>
+                <button id="sendBTN">Send</button>
+            </div>
+        </div>
+        <script src="script.js" defer></script>
 
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-                toggleBtn.innerHTML = "▼";
-            } else {
-                content.style.display = "none";
-                toggleBtn.innerHTML = "▶";
-            }
-        }
-    </script>
 </body>
 </html>
