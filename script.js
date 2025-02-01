@@ -1,109 +1,107 @@
+document.addEventListener("DOMContentLoaded", function () {
+    initializeExpansionPanels();
+    initializeChatbot();
+});
 
-
-const chatInput = 
-    document.querySelector('.chat-input textarea');
-const sendChatBtn = 
-    document.querySelector('.chat-input button');
+// Selectors
+const chatInput = document.querySelector(".chat-input textarea");
+const sendChatBtn = document.querySelector(".chat-input button");
 const chatbox = document.querySelector(".chatbox");
 
-let userMessage;
-const API_KEY = ""
-//OpenAI Free APIKey
+// OpenAI API Configuration
+const API_KEY = "" // Replace with a secure method to store API keys
+const API_URL = "https://api.openai.com/v1/chat/completions";
 
+// Function to create chat messages
 const createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", className);
-    let chatContent = 
-        className === "chat-outgoing" ? `<p>${message}</p>` : `<p>${message}</p>`;
-    chatLi.innerHTML = chatContent;
+    chatLi.innerHTML = `<p>${message}</p>`;
     return chatLi;
-}
+};
 
-const generateResponse = (incomingChatLi) => {
-    const API_URL = "https://api.openai.com/v1/chat/completions";
-    const messageElement = incomingChatLi
-    .querySelector("p");
-    const requestOptions = {
+// Function to handle OpenAI API response
+const generateResponse = (incomingChatLi, userMessage) => {
+    const messageElement = incomingChatLi.querySelector("p");
+
+    fetch(API_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            "model": "gpt-3.5-turbo",
-            "messages": [
-                {
-                    role: "user",
-                    content: userMessage
-                }
-            ]
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: userMessage }]
         })
-    };
-
-    fetch(API_URL, requestOptions)
-        .then(res => {
-            if (!res.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return res.json();
-        })
-        .then(data => {
-            messageElement
-            .textContent = data.choices[0].message.content;
-        })
-        .catch((error) => {
-            messageElement
-            .classList.add("error");
-            messageElement
-            .textContent = "Oops! Something went wrong. Please try again!";
-        })
-        .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+    })
+    .then(res => {
+        if (!res.ok) throw new Error("Failed to fetch response from OpenAI");
+        return res.json();
+    })
+    .then(data => {
+        messageElement.textContent = data.choices[0].message.content;
+    })
+    .catch(() => {
+        messageElement.classList.add("error");
+        messageElement.textContent = "❌ Error: Please try again!";
+    })
+    .finally(() => {
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+    });
 };
 
-
+// Function to send and display chat messages
 const handleChat = () => {
-    userMessage = chatInput.value.trim();
-    if (!userMessage) {
-        return;
-    }
-    chatbox
-    .appendChild(createChatLi(userMessage, "chat-outgoing"));
-    chatbox
-    .scrollTo(0, chatbox.scrollHeight);
+    let userMessage = chatInput.value.trim();
+    if (!userMessage) return;
 
+    // Add outgoing message
+    chatbox.appendChild(createChatLi(userMessage, "chat-outgoing"));
+    chatbox.scrollTo(0, chatbox.scrollHeight);
+    
+    // Clear input field
+    chatInput.value = "";
+
+    // Add "Thinking..." placeholder for incoming response
     setTimeout(() => {
-        const incomingChatLi = createChatLi("Thinking...", "chat-incoming")
+        const incomingChatLi = createChatLi("Thinking...", "chat-incoming");
         chatbox.appendChild(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-        generateResponse(incomingChatLi);
-    }, 600);
-}
 
+        generateResponse(incomingChatLi, userMessage);
+    }, 600);
+};
+
+// Event Listeners
 sendChatBtn.addEventListener("click", handleChat);
 
+// Enable "Enter" key for sending messages
+chatInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter" && !event.shiftKey) {
+        event.preventDefault();
+        handleChat();
+    }
+});
+
+// Function to close chatbot
 function cancel() {
-    let chatbotcomplete = document.querySelector(".chatBot");
-    if (chatbotcomplete.style.display != 'none') {
-        chatbotcomplete.style.display = "none";
+    let chatbotComplete = document.querySelector(".chatBot");
+    if (chatbotComplete.style.display !== "none") {
+        chatbotComplete.style.display = "none";
         let lastMsg = document.createElement("p");
-        lastMsg.textContent = 'Thanks for using our Chatbot!';
-        lastMsg.classList.add('lastMessage');
-        document.body.appendChild(lastMsg)
+        lastMsg.textContent = "Thanks for using our Chatbot!";
+        lastMsg.classList.add("lastMessage");
+        document.body.appendChild(lastMsg);
     }
 }
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    initializeExpansionPanels();  // Ensure expansion panels work
-    initializeChatbot();  // Ensure chatbot works
-});
 
 // Function to enable expansion panels
 function initializeExpansionPanels() {
     document.querySelectorAll(".sub-item").forEach((item) => {
-        item.addEventListener("click", function() {
+        item.addEventListener("click", function () {
             const content = this.nextElementSibling;
-            const toggleBtn = this.querySelector('.toggle-btn');
+            const toggleBtn = this.querySelector(".toggle-btn");
 
             if (content.style.display === "none" || content.style.display === "") {
                 content.style.display = "block";
@@ -118,5 +116,5 @@ function initializeExpansionPanels() {
 
 // Function to initialize chatbot (Modify if needed)
 function initializeChatbot() {
-    console.log("Chatbot initialized");  // Debugging message
+    console.log("Chatbot initialized"); // Debugging message
 }

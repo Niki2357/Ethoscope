@@ -10,11 +10,16 @@
 <body>
     <!-- Left Sidebar -->
     <div class="sidebar">
-        <div class="logo">
-            <img src="images/big_logo_black.png" alt="Logo" style="width: 200px; height: 46px">
 
-        </div>
+        
         <ul class="contact-list">
+            <li class="logo-fixed-box">
+                <div class="logo">
+                    <img src="images/big_logo_black.png" alt="Logo" style="width: 200px; height: 46px">
+        
+                </div>
+            </li>
+            <li class="dummy-logo-fixed-box">dummy</li>
             <li class="home-item"><span>🪴 HOME</span></li>
             <li class="contact-item"><img src="images/Athena.jpg" alt="Athena"><span>Athena Zhong</span></li>
             <li class="contact-item"><img src="images/Chen.jpg" alt="Chen"><span>Chen Peng</span></li>
@@ -183,23 +188,27 @@
 
 
     <div class="chatBot">
-        <header>
-            <h2>ChatBot</h2>
-            <span alt="Close" 
+        <div class="chatbot-header">
+            <div class="chat-header">ChatBot</div>
+            <!-- <span alt="Close" 
                     id="cross" 
-                    onclick="cancel()">X</span>
-        </header>
+                    onclick="cancel()">X</span> -->
+        </div>
+
         <ul class="chatbox">
             <li class="chat-incoming chat">
                 <p>Hey! How can I assist you today?</p>
             </li>
         </ul>
+
         <div class="chat-input">
             <textarea rows="0" cols="17"
                         placeholder="Enter a message..."></textarea>
             <button id="sendBTN">Send</button>
         </div>
+        
     </div>
+    
     <script src="script.js" defer></script>
 
 </body>
