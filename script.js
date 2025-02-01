@@ -7,9 +7,7 @@ const sendChatBtn =
 const chatbox = document.querySelector(".chatbox");
 
 let userMessage;
-const API_KEY = 'YOU_API_KEY'
-    
-
+const API_KEY = ""
 //OpenAI Free APIKey
 
 const createChatLi = (message, className) => {
