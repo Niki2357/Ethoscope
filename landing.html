@@ -181,11 +181,66 @@
 
     </div>
     <div class="fixed-box">
-        <button class="import-add-button">IMPORT</button>
-        <button class="import-add-button">ADD</button>
+        <button class="import-add-button" id="importBtn">IMPORT</button>
+        <button class="import-add-button onclick="openModal()" id="addBtn">ADD</button>
     </div>
 
+        <!-- Add Button (Trigger for the Pop-Up) -->
+    
 
+<!-- Pop-Up Modal -->
+<div id="popup-modal" class="modal">
+    <div class="modal-content">
+        <!-- Close Button -->
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+
+        <p class="orange-h1">Add New Contact</p>
+
+        <!-- Full Name Input -->
+        <div class="form-group">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <input type="text" id="contact-name" placeholder="Full Name">
+        </div>
+
+        <!-- LinkedIn URL Input -->
+        <div class="form-group">
+            <img src="images/linkedin.png" alt="LinkedIn" class="input-icon">
+            <input type="url" id="contact-linkedin" placeholder="LinkedIn URL">
+        </div>
+
+        <!-- Email Input -->
+        <div class="form-group">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <input type="email" id="contact-email" placeholder="Email Address">
+        </div>
+
+        <!-- Phone Number Input -->
+        <div class="form-group">
+            <img src="images/phone.png" alt="US Flag" class="input-icon">
+            <input type="tel" id="contact-phone" placeholder="Phone Number">
+        </div>
+
+        <!-- Add More Details -->
+        <div class="add-details">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M5 12h14"></path>
+            </svg>
+            <span>Add More Details</span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="save-cancel-button" onclick="saveContact()">Save</button>
+            <button class="save-cancel-button" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
 
     <div class="chatBot">
         <div class="chatbot-header">

@@ -118,3 +118,77 @@ function initializeExpansionPanels() {
 function initializeChatbot() {
     console.log("Chatbot initialized"); // Debugging message
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    initializeExpansionPanels();
+    initializeChatbot();
+});
+
+/* Open the Pop-Up */
+function openModal() {
+    document.getElementById("popup-modal").style.display = "flex";
+}
+
+/* Close the Pop-Up */
+function closeModal() {
+    document.getElementById("popup-modal").style.display = "none";
+}
+
+/* Save Contact */
+function saveContact() {
+    // let name = document.getElementById("contact-name").value.trim();
+    // let role = document.getElementById("contact-role").value.trim();
+
+
+    // if (name === "" || role === "") {
+    //     alert("Please fill out both fields!");
+    //     return;
+    // }
+
+    // let contactList = document.querySelector(".contact-list");
+    // let newContact = document.createElement("li");
+    // newContact.classList.add("contact-item");
+    // newContact.innerHTML = `<img src="https://via.placeholder.com/35" alt="${name}"><span>${name} (${role})</span>`;
+
+    // contactList.appendChild(newContact);
+
+    // Close the modal after adding
+    closeModal();
+
+    // Clear input fields
+    // document.getElementById("contact-name").value = "";
+    // document.getElementById("contact-role").value = "";
+}
+
+
+function cancelContact() {
+
+    // Close the modal after adding
+    closeModal();
+
+    // Clear input fields
+    document.getElementById("contact-name").value = "";
+    document.getElementById("contact-role").value = "";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    initializeExpansionPanels();
+    initializeChatbot();
+
+    // Ensure buttons exist before adding event listeners
+    const importBtn = document.getElementById("importBtn");
+    const addBtn = document.getElementById("addBtn");
+
+    if (importBtn) {
+        importBtn.addEventListener("click", importData);
+    }
+    if (addBtn) {
+        addBtn.addEventListener("click", openModal);
+    }
+});
+
+/* Function for IMPORT Button */
+function importData() {
+    alert("Import function triggered! (Implement import logic here)");
+}
+
