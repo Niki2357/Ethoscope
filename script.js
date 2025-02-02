@@ -9,7 +9,6 @@ const sendChatBtn = document.querySelector(".chat-input button");
 const chatbox = document.querySelector(".chatbox");
 
 // OpenAI API Configuration
-const API_KEY = "" // Replace with a secure method to store API keys
 const API_URL = "https://api.openai.com/v1/chat/completions";
 
 // Function to create chat messages
