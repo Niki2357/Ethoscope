@@ -45,68 +45,6 @@
         <!-- <button class="import-button">IMPORT</button> -->
     </div>
 
-    <!-- Middle Content -->
-    <div class="content">
-        <div class="search-container">
-            <div class="header">
-                <input class="search-box" type="text" placeholder="YC Co-Founder">
-                <button class="search-box-button">SEARCH</button>
-            </div>
-        </div>
-
-        
-
-        <h1>
-            It’s February 1, 2025 <span style="font-size:1.4rem;">🍀</span><br>
-            Let’s see what’s on your radar today!
-          </h1>
-
-
-        <div class="section">
-            <h3>🎗️ Reminder</h3>
-            <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>🎂 Prepare a birthday for <span class="bold_orange">@Athena Zhong</span>.</span>
-                
-            </div>
-            <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>📞 Call <span class="bold_orange">@Brianna Lin</span> at 9 PM today.</span>
-            </div>
-        </div>
-        
-
-        <div class="section">
-            <h3>🔄 Updates</h3>
-            <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>🎂 It’s <span class="bold_orange">@Athena Zhong</span>’s 22nd birthday!</span>
-                
-            </div>
-            <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>🏙️ <span class="bold_orange">@Joseph Walxim</span> has left Goldman Sachs and started a new job at Sequoia!</span>
-            </div>
-            <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>🌉 <span class="bold_orange">@Steven Walxim</span> has relocated from New York City to Singapore.</span>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3>👥 Recommendations</h3>
-            <div class="recommendations-wrapper">
-                <div class="rec-profile">
-                  <img src="images/2.png" alt="Profile">
-                  <p><span class="bold_orange">@Lila Montgomery</span><br>APM at Google</p>
-                </div>
-                <div class="rec-profile">
-                  <img src="images/7.jpg" alt="Profile">
-                  <p><span class="bold_orange">@Ava Collins</span><br>PhD Student at Harvard</p>
-                </div>
-                <div class="rec-profile">
-                  <img src="images/9.jpg" alt="Profile">
-                  <p><span class="bold_orange">@James Porter</span><br>PM at Microsoft</p>
-                </div>
-              </div>
-        </div>
-        
-    </div>
     <div class="fixed-box">
         <button class="import-add-button" id="importBtn">IMPORT</button>
         <button class="import-add-button" onclick="openModal()" id="addBtn">ADD</button>
@@ -167,26 +105,45 @@
     </div>
 </div>
 
-    <div class="chatBot">
+    <div class="chatBot-import">
 
-        <div class="chatBot-inner">
+        <div class="chatBot-inner-import">
             <div class="chatbot-header">
                 <div class="chat-header">EthoBot</div>
                 <!-- <span alt="Close" 
                         id="cross" 
                         onclick="cancel()">X</span> -->
             </div>
+
+
     
             <ul class="chatbox">
                 <li class="chat-incoming chat">
                     <p>Hey! How can I assist you today?</p>
                 </li>
             </ul>
+
+            <div class="chat-options">
+                <div class="option-box">
+                  Include this for personality analysis
+                  <input type="checkbox">
+                </div>
+                <div class="option-box">
+                  + Add the contact(s) to sync with
+                </div>
+             </div>
     
+
+
+              
             <div class="chat-input">
-                <textarea rows="0" cols="17"
+                <div class="chat-input-icons">
+                    <img src="images/attachment.png" alt="Attach" title="Attach File">
+                    <img src="images/voice_input.png" alt="Voice" title="Voice Input">
+                  </div>
+                <textarea rows="10" cols="17"
                             placeholder="Enter a message..."></textarea>
-                <button id="sendBTN">Send</button>
+                <button id="sendBTN" class="send-button-import">Send</button>
             </div>
 
         </div>
