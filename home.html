@@ -90,21 +90,40 @@
         </div>
 
         <div class="section">
-            <h3>👥 Recommendations</h3>
-            <div class="recommendations-wrapper">
+            <h3 style="display: flex; align-items: center; gap: 10px;">
+                👥 Recommendations
+                <button id="refreshRecommendationsBtn" class="small-refresh-btn">🔄</button>
+            </h3>
+        
+            <div class="recommendations-wrapper" id="recWrapper1">
                 <div class="rec-profile">
-                  <img src="images/2.png" alt="Profile">
-                  <p><span class="bold_orange">@Lila Montgomery</span><br>APM at Google</p>
+                    <img src="images/2.png" alt="Profile">
+                    <p><span class="bold_orange">@Lila Montgomery</span><br>APM at Google</p>
                 </div>
                 <div class="rec-profile">
-                  <img src="images/7.jpg" alt="Profile">
-                  <p><span class="bold_orange">@Ava Collins</span><br>PhD Student at Harvard</p>
+                    <img src="images/7.jpg" alt="Profile">
+                    <p><span class="bold_orange">@Ava Collins</span><br>PhD Student at Harvard</p>
                 </div>
                 <div class="rec-profile">
-                  <img src="images/9.jpg" alt="Profile">
-                  <p><span class="bold_orange">@James Porter</span><br>PM at Microsoft</p>
+                    <img src="images/9.jpg" alt="Profile">
+                    <p><span class="bold_orange">@James Porter</span><br>PM at Microsoft</p>
                 </div>
-              </div>
+            </div>
+        
+            <div class="recommendations-wrapper" id="recWrapper2" style="display: none;">
+                <div class="rec-profile">
+                    <img src="images/Athena.jpg" alt="Profile">
+                    <p><span class="bold_orange">@Athena Zhong</span><br>UX Designer</p>
+                </div>
+                <div class="rec-profile">
+                    <img src="images/Chen.jpg" alt="Profile">
+                    <p><span class="bold_orange">@Chen Peng</span><br>Psychology Student at UPenn</p>
+                </div>
+                <div class="rec-profile">
+                    <img src="images/9.jpg" alt="Profile">
+                    <p><span class="bold_orange">@Gary</span><br>UI Designer</p>
+                </div>
+            </div>
         </div>
         
     </div>

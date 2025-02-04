@@ -25,8 +25,11 @@ const generateResponse = (incomingChatLi, userMessage) => {
 
     // System message providing additional context
     const systemMessage = `Answer the next question related to this: 
-    There is a person named Peng Chen who is also a startup founder. 
-    She is also trying for YC this spring.`;
+    There is a person named Gary who is very good at art and design. Athena and
+    Chen, who is a INTJ are working on UI. Chen is really good at UX because she is psychology major.
+    Athena ISFJ is very good at doing research on customers.
+    Whenever you mention Gary, embed this hyperlink into the name "Gary"
+    `;
 
     // Combine system instruction with the user's query
     const modifiedUserMessage = `${systemMessage}\n\nUser: ${userMessage}`;
@@ -261,5 +264,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Show the new current news item
         newsItems[currentNewsIndex].style.display = "block";
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const recWrappers = document.querySelectorAll(".recommendations-wrapper");
+    const refreshBtn = document.getElementById("refreshRecommendationsBtn");
+
+    let currentIndex = 0; // Start with the first recommendations list
+
+    refreshBtn.addEventListener("click", function () {
+        // Hide all recommendation wrappers
+        recWrappers.forEach(wrapper => wrapper.style.display = "none");
+
+        // Toggle to the next wrapper
+        currentIndex = (currentIndex + 1) % recWrappers.length;
+        recWrappers[currentIndex].style.display = "flex"; // Show the next one
+    });
+
+    // Ensure only the first wrapper is visible on page load
+    recWrappers.forEach((wrapper, index) => {
+        wrapper.style.display = index === 0 ? "flex" : "none";
     });
 });
