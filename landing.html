@@ -76,7 +76,11 @@
 
 
         <div class="section">
-            <h3>Updates</h3>
+
+            <h3 style="display: flex; align-items: center; gap: 10px;">
+                Updates
+                <button class="small-toggle-btn">🔄 (Updated on Feb 3rd.)</button>
+            </h3>
 
 
             <div class="sub-item" onclick="toggleSubContent(this)">
@@ -105,6 +109,15 @@
                 <p>🏅 Aiming to organize practice sessions and participate in club suqash competitions</p>
             </div>
 
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>𝕏 ﹩link weekly about to be a movie!</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>🎓 Working for Georgia Institute of Technology College of Computing.</p>
+                <p>📖 Second class TAing for.</p>
+            </div>
+
         </div>
 
         <div class="section">
@@ -127,28 +140,45 @@
                 <p>📆 You set up a time to meet with Niki to talk about a new startup idea she is working on.</p>
             </div>
         </div>
-
+<!-- 
         <div class="section">
             <h3>Related News</h3>
-            <div class="sub-item" onclick="toggleSubContent(this)">
-                <!-- <span>news 1 </span> -->
+            <div class="sub-item">
                 <a href="https://www.ajc.com/sports/georgia-tech/no-20-georgia-tech-women-win-at-miami/SJPL6NWOWBGNRMBNU6DIRGKYTY/" target="_blank">
                     <span class="news-link">No. 20 Georgia Tech women win at Miami</span>
                 </a>
-                <span class="toggle-btn">▶</span>
             </div>
-            <!-- <div class="sub-content">
-                <p>📍 Kent, CT, USA</p>
-                <p>🎓 High School Diploma</p>
-            </div> -->
 
-            <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>news 2</span>
-                <span class="toggle-btn">▶</span>
+            <div class="sub-item">
+                <a href="https://www.ycombinator.com/blog/announcing-yc-x25/" target="_blank">
+                    <span class="news-link">Announcing YC X25, the spring 2025 batch</span>
+                </a>
             </div>
-            <div class="sub-content">
-                <p>📍 Atlanta, GA, USA</p>
-                <p>📚 Major: Computer Science</p>
+
+        </div> -->
+
+        <div class="section">
+            <h3 style="display: flex; align-items: center; gap: 10px;">
+                Related News
+                <button id="toggleNewsBtn" class="small-toggle-btn">🔄</button>
+            </h3>
+            
+            <div class="sub-item news-item">
+                <a href="https://www.ajc.com/sports/georgia-tech/no-20-georgia-tech-women-win-at-miami/SJPL6NWOWBGNRMBNU6DIRGKYTY/" target="_blank">
+                    <span class="news-link">No. 20 Georgia Tech women win at Miami</span>
+                </a>
+            </div>
+
+            <div class="sub-item news-item">
+                <a href="https://x.com/huniki97567/status/1886591836703113368?s=46" target="_blank">
+                    <span class="news-link">$PLTR earnings top estimates today! Let's goooooo!</span>
+                </a>
+            </div>
+        
+            <div class="sub-item news-item" style="display: none;">
+                <a href="https://www.ycombinator.com/blog/announcing-yc-x25/" target="_blank">
+                    <span class="news-link">Announcing YC X25, the spring 2025 batch</span>
+                </a>
             </div>
         </div>
 

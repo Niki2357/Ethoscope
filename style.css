@@ -807,3 +807,18 @@ a:hover {
     color: #E7880B;
     text-decoration: underline;
 }
+.small-toggle-btn {
+    background: none;
+    border: 0px solid #999;
+    padding: 3px 6px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.small-toggle-btn:hover {
+    background: #E7880B;
+    color: white;
+    border-color: #E7880B;
+}

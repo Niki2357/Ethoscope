@@ -20,11 +20,18 @@ const createChatLi = (message, className) => {
     chatLi.innerHTML = `<p>${message}</p>`;
     return chatLi;
 };
-
-// Function to handle OpenAI API response
 const generateResponse = (incomingChatLi, userMessage) => {
     const messageElement = incomingChatLi.querySelector("p");
 
+    // System message providing additional context
+    const systemMessage = `Answer the next question related to this: 
+    There is a person named Peng Chen who is also a startup founder. 
+    She is also trying for YC this spring.`;
+
+    // Combine system instruction with the user's query
+    const modifiedUserMessage = `${systemMessage}\n\nUser: ${userMessage}`;
+
+    // API Request
     fetch(API_URL, {
         method: "POST",
         headers: {
@@ -33,25 +40,27 @@ const generateResponse = (incomingChatLi, userMessage) => {
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: userMessage }]
+            messages: [{ role: "user", content: modifiedUserMessage }]
         })
     })
     .then(res => {
-        if (!res.ok) throw new Error("Failed to fetch response from OpenAI");
+        if (!res.ok) throw new Error(`API request failed with status ${res.status}`);
         return res.json();
     })
     .then(data => {
+        // Set the response text inside the chat message
         messageElement.textContent = data.choices[0].message.content;
     })
-    .catch(() => {
+    .catch(error => {
+        console.error("Chatbot API Error:", error);
         messageElement.classList.add("error");
         messageElement.textContent = "❌ Error: Please try again!";
     })
     .finally(() => {
+        // Scroll the chatbox to the latest message
         chatbox.scrollTo(0, chatbox.scrollHeight);
     });
 };
-
 // Function to send and display chat messages
 const handleChat = () => {
     let userMessage = chatInput.value.trim();
@@ -235,4 +244,22 @@ document.addEventListener("DOMContentLoaded", function () {
             // TODO: Implement actual file sending to OpenAI or backend.
         }
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const newsItems = document.querySelectorAll(".news-item");
+    const toggleNewsBtn = document.getElementById("toggleNewsBtn");
+
+    let currentNewsIndex = 0;
+
+    toggleNewsBtn.addEventListener("click", function () {
+        // Hide the current news item
+        newsItems[currentNewsIndex].style.display = "none";
+
+        // Move to the next news item (looping back if at the end)
+        currentNewsIndex = (currentNewsIndex + 1) % newsItems.length;
+
+        // Show the new current news item
+        newsItems[currentNewsIndex].style.display = "block";
+    });
 });
