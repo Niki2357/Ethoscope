@@ -30,6 +30,7 @@
             </li>
             <li class="contact-item"><img src="images/2.png" alt="Lila"><span>Lila Montgomery</span></li>
             <li class="contact-item"><img src="images/3.jpg" alt="Evan"><span>Evan Carter</span></li>
+            <li class="contact-item"><img src="images/13.jpg" alt="Emily"><span>Emily Jiang</span></li>
             <li class="contact-item"><img src="images/1.png" alt="Sophia"><span>Sophia Bennett</span></li>
             <li class="contact-item"><img src="images/4.jpg" alt="Liam"><span>Liam Kim</span></li>
             <li class="contact-item"><img src="images/5.jpg" alt="Olivia"><span>Olivia Reed</span></li>
@@ -46,7 +47,7 @@
     </div>
 
     <div class="fixed-box">
-        <button class="import-add-button" id="importBtn">IMPORT</button>
+        <button class="import-add-button"><a href="import.html">IMPORT</a></button>
         <button class="import-add-button" onclick="openModal()" id="addBtn">ADD</button>
     </div>
 
@@ -105,6 +106,8 @@
     </div>
 </div>
 
+
+
     <div class="chatBot-import">
 
         <div class="chatBot-inner-import">
@@ -134,8 +137,19 @@
              </div>
     
 
+             <div class="chat-input">
+                <div class="chat-input-icons">
+                    <img src="images/voice_input.png" alt="Voice" title="Voice Input">
+                    <label for="fileUpload">
+                        <img src="images/attachment.png" alt="Attach" title="Attach File">
+                    </label>
+                    <input type="file" id="fileUpload" class="hidden-file-input">
+                </div>
+                <textarea rows="10" cols="17" placeholder="Enter a message..."></textarea>
+                <button id="sendBTN" class="send-button-import">Send</button>
+            </div>
 
-              
+<!--               
             <div class="chat-input">
                 <div class="chat-input-icons">
                     <img src="images/attachment.png" alt="Attach" title="Attach File">
@@ -144,7 +158,7 @@
                 <textarea rows="10" cols="17"
                             placeholder="Enter a message..."></textarea>
                 <button id="sendBTN" class="send-button-import">Send</button>
-            </div>
+            </div> -->
 
         </div>
         

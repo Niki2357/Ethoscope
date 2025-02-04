@@ -26,7 +26,7 @@ body {
 }
 
 .logo-fixed-box {
-    width: 14.5%;
+    width: 13.8%;
     height: 40px;
     position: fixed;
     top: 0px; /* Adjust vertical position */
@@ -269,14 +269,14 @@ body {
     padding: 0;
 }
 .fixed-box {
-    width: 14.5%;
+    width: 14.2%;
     height: 40px;
     position: fixed;
     bottom: 0px; /* Adjust vertical position */
     left: 0px;   /* Adjust horizontal position */
     background-color: #ffffff; /* Box background */
     padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     display: flex;
     align-items: center;
     gap: 10px; /* Space between buttons */
@@ -286,7 +286,7 @@ body {
 }
 
 .import-add-button {
-    width: 50%;
+    width:  48%;
     padding: 0.7rem;
     margin-top: 1rem;
     border: none;
@@ -769,7 +769,7 @@ a:hover {
     justify-content: flex-end;
     gap: 1rem;
     position: absolute;
-    bottom: 120px;
+    bottom: 17%;
     right: 70px;
     height: 3rem;
     width: 1000px;
@@ -794,3 +794,16 @@ a:hover {
   .option-box input[type="checkbox"] {
     accent-color: #ffcc80;
   }
+
+  .hidden-file-input {
+    display: none;
+}
+
+.chat-input-icons label {
+    cursor: pointer;
+}
+
+.news-link {
+    color: #E7880B;
+    text-decoration: underline;
+}

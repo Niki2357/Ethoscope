@@ -10,6 +10,8 @@ const chatbox = document.querySelector(".chatbox");
 
 // OpenAI API Configuration
 const API_URL = "https://api.openai.com/v1/chat/completions";
+const API_KEY = "";
+
 
 // Function to create chat messages
 const createChatLi = (message, className) => {
@@ -191,3 +193,46 @@ function importData() {
     alert("Import function triggered! (Implement import logic here)");
 }
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fileUpload = document.getElementById("fileUpload");
+    const sendChatBtn = document.getElementById("sendBTN");
+
+    fileUpload.addEventListener("change", handleFileUpload);
+    sendChatBtn.addEventListener("click", handleChat);
+
+    function handleFileUpload(event) {
+        const file = event.target.files[0];
+        if (file) {
+            // Create a new chat message to show the file name
+            const chatbox = document.querySelector(".chatbox");
+            const fileMessage = document.createElement("li");
+            fileMessage.classList.add("chat", "chat-outgoing");
+            fileMessage.innerHTML = `<p>📎 ${file.name} uploaded</p>`;
+            chatbox.appendChild(fileMessage);
+        }
+    }
+
+    function handleChat() {
+        let userMessage = document.querySelector(".chat-input textarea").value.trim();
+        if (!userMessage) return;
+
+        // Display user message
+        const chatbox = document.querySelector(".chatbox");
+        const userChat = document.createElement("li");
+        userChat.classList.add("chat", "chat-outgoing");
+        userChat.innerHTML = `<p>${userMessage}</p>`;
+        chatbox.appendChild(userChat);
+
+        // Clear input field
+        document.querySelector(".chat-input textarea").value = "";
+
+        // Simulate file sending (Modify this for API integration)
+        const file = fileUpload.files[0];
+        if (file) {
+            console.log("File ready to send:", file);
+            // TODO: Implement actual file sending to OpenAI or backend.
+        }
+    }
+});
