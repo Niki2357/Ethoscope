@@ -37,7 +37,7 @@
                 <a href="Niki.html"><span>Niki Hu</span></a>
             </li>
             <li class="contact-item">
-                <img src="images/x.png" alt="Gary">
+                <img src="images/Gary.png" alt="Gary">
                 <a href="Gary.html"><span>Gary Wang</span></a>
             </li>
             <li class="contact-item"><img src="images/2.png" alt="Lila"><span>Lila Montgomery</span></li>
@@ -130,10 +130,29 @@
 
     </div>
     <div class="section">
-        <h3>Recent Connections</h3>
-        
+        <h3>Recent Connections
+            <button class="small-toggle-btn">🔄 (Updated on Feb 9th.)</button>
+        </h3>
+
+        <!-- ############### NEW ############### -->
         <div class="sub-item" onclick="toggleSubContent(this)">
-            <span>📊 In-person catch-up (Jan. 14th, 2025)</span>
+            <span>📊 In-person catch-up (Feb. 8th, 2025)</span>
+            <span class="toggle-btn">▶</span>
+        </div>
+
+
+        <div class="sub-content">
+            <p>🌺 Talked about course selection plans for the new semester.</p>
+            <p>🚀 You recommended Chen to take a PhD seminar class on LLM with you every Friday afternoon.</p>
+            <p>📆 Chen suggested meeting routinely every month.</p>
+            <p><a href="./transcript.html" id="openTranscriptModal">Click here for full transcript.</a></p>
+        </div>
+
+            
+        <!-- ############### NEW ############### -->
+
+        <div class="sub-item" onclick="toggleSubContent(this)">
+            <span>📖 In-person catch-up (Jan. 14th, 2025)</span>
             <span class="toggle-btn">▶</span>
         </div>
         <div class="sub-content">
@@ -153,7 +172,7 @@
     </div>
 
 
-    <div class="section">
+    <!-- <div class="section">
         <h3 style="display: flex; align-items: center; gap: 10px;">
             Related News
             <button id="toggleNewsBtn" class="small-toggle-btn">🔄</button>
@@ -170,21 +189,42 @@
                 <span class="news-link">Elon Musk says a third patient got a Neuralink brain implant.</span>
             </a>
         </div>
-    
-        <div class="sub-item news-item" style="display: none;">
-            <a href="https://www.ycombinator.com/blog/announcing-yc-x25/" target="_blank">
-                <span class="news-link">Announcing YC X25, the spring 2025 batch</span>
-            </a>
-        </div>
 
         <div class="sub-item news-item" style="display: none;">
             <a href="https://www.businesswire.com/news/home/20250113376337/en/Synchron-to-Advance-Implantable-Brain-Computer-Interface-Technology-with-NVIDIA-Holoscan" target="_blank">
-                <span class="news-link">Synchron to Advance Implantable Brain-Computer Interface Technology with NVIDIA Holoscan</span>
+                <span class="news-link">Emergency Pod: Reinforcement Learning Works! Reflecting on Chinese Models DeepSeek-R1 and Kimi k1.5</span>
             </a>
         </div>
 
 
+    </div> -->
+
+    <div class="section">
+        <h3 style="display: flex; align-items: center; gap: 10px;">
+            Related News
+            <button class="small-toggle-btn">🔄 Show More</button>
+        </h3>
+
+        <div class="sub-item news-item">
+            <a href="https://www.npr.org/sections/world-cafe/2025/02/06/g-s1-46813/revenge-of-the-super-bowl-playlists-philly-over-everybody" target="_blank">
+                <span class="news-link">Revenge of the Super Bowl Playlists: Philly Over Everybody</span>
+            </a>
+        </div>
+
+        <div class="sub-item news-item">
+            <a href="https://apnews.com/article/elon-musk-neuralink-brain-computer-interface-9dbc92206389f27fd032825cf1597ee5" target="_blank">
+                <span class="news-link">Elon Musk says a third patient got a Neuralink brain implant.</span>
+            </a>
+        </div>
+
+        <div class="sub-item news-item hidden-news" id="extraNews">
+            <a href="https://www.businesswire.com/news/home/20250113376337/en/Synchron-to-Advance-Implantable-Brain-Computer-Interface-Technology-with-NVIDIA-Holoscan" target="_blank">
+                <span class="news-link">Emergency Pod: Reinforcement Learning Works! Reflecting on Chinese Models DeepSeek-R1 and Kimi k1.5</span>
+            </a>
+        </div>
+
     </div>
+
 
     <div class="section">
         <h3>Education</h3>

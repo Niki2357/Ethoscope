@@ -290,3 +290,18 @@ document.addEventListener("DOMContentLoaded", function () {
         wrapper.style.display = index === 0 ? "flex" : "none";
     });
 });
+
+
+document.getElementById("toggleNewsBtn").addEventListener("click", function() {
+    let extraNews = document.getElementById("extraNews");
+
+    if (extraNews.style.display === "none" || extraNews.classList.contains("hidden-news")) {
+        extraNews.style.display = "block";
+        extraNews.classList.remove("hidden-news");
+        this.innerHTML = "🔄 Show Less";
+    } else {
+        extraNews.style.display = "none";
+        extraNews.classList.add("hidden-news");
+        this.innerHTML = "🔄 Show More";
+    }
+});
