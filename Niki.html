@@ -85,7 +85,7 @@
 
             <h3 style="display: flex; align-items: center; gap: 10px;">
                 Updates
-                <button class="small-toggle-btn">🔄 (Updated on Feb 3rd.)</button>
+                <button class="small-toggle-btn">🔄 (Updated on Feb 8th.)</button>
             </h3>
 
 
@@ -127,17 +127,31 @@
         </div>
 
         <div class="section">
-            <h3>Recent Connections</h3>
-            
+            <h3>Recent Connections
+                <button class="small-toggle-btn" onclick="showLatestMeeting()">🔄 Updated on Feb 8th.</button>
+            </h3>
+    
+            <!-- Initially Hidden -->
+            <div id="latest-meeting" style="display: none;">
+                <div class="sub-item" onclick="toggleSubContent(this)">
+                    <span>📊 In-Person Meeting about Startup (Feb. 8th, 2025)</span>
+                    <span class="toggle-btn">▶</span>
+                </div>
+                <div class="sub-content">
+                    <p>🚀 You followed us with Niki to talk about her progress with the startup company Ethoscope.</p>
+                    <p>📆 Niki is planning to apply for Y Combinator Spring Batch 2025.</p>
+                </div>
+            </div>
+    
             <div class="sub-item" onclick="toggleSubContent(this)">
                 <span>📊 Zoom Meeting (Jan. 15th, 2025)</span>
                 <span class="toggle-btn">▶</span>
             </div>
             <div class="sub-content">
-                <p>🚀 You gave advice to Niki's startup project on developing a webstie as an AI contact list.</p>
+                <p>🚀 You gave advice to Niki's startup project on developing a website as an AI contact list.</p>
                 <p>📆 You and Niki agreed to meet next week for further discussions.</p>
             </div>
-
+    
             <div class="sub-item" onclick="toggleSubContent(this)">
                 <span>📧 Email (Jan. 12th, 2025)</span>
                 <span class="toggle-btn">▶</span>
@@ -166,7 +180,7 @@
         <div class="section">
             <h3 style="display: flex; align-items: center; gap: 10px;">
                 Related News
-                <button id="toggleNewsBtn" class="small-toggle-btn">🔄</button>
+                <button id="toggleNewsBtn" class="small-toggle-btn">🔄 (Updated on Feb 8th.)</button>
             </h3>
             
             <div class="sub-item news-item">

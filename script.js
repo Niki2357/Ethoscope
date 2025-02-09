@@ -13,6 +13,8 @@ const API_URL = "https://api.openai.com/v1/chat/completions";
 const API_KEY = "";
 
 
+
+
 // Function to create chat messages
 const createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
