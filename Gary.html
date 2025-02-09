@@ -22,7 +22,7 @@
             <li class="dummy-logo-fixed-box">dummy</li>
             <!-- <li class="home-item"><a href="home.html"></a><span>🪴 HOME</span></li> -->
             <li class="home-item"><a href="home.html">🪴 HOME</a></li>
-            <li class="contact-item selected">
+            <li class="contact-item">
                 <img src="images/Athena.jpg" alt="Athena">
                 <a href="Athena.html"><span>Athena Zhong</span></a>
             </li>
@@ -36,7 +36,7 @@
                 <img src="images/Niki.JPG" alt="Niki">
                 <a href="Niki.html"><span>Niki Hu</span></a>
             </li>
-            <li class="contact-item">
+            <li class="contact-item selected">
                 <img src="images/x.png" alt="Gary">
                 <a href="Gary.html"><span>Gary Wang</span></a>
             </li>
@@ -59,127 +59,151 @@
     <!-- Middle Content -->
     <div class="content">
         <div class="section">
-            <div class="profile-header">
-                <!-- Profile Image (Left) -->
-                <img src="images/Athena.JPG" alt="Profile Picture" class="profile-picture">
-                
-                <!-- Name and Contact Info (Center) -->
-                <div class="profile-info">
-                    <h1>Athena Zhong</h1>
-                    <p class="contact-details">
-                        (419) 472-7890 <br>
-                        <a href="mailto:athenazh@sas.upenn.edu">athenazh@sas.upenn.edu</a>
-                    </p>
-                    <div class="social-icons">
-                        <img src="images/instagram.png" alt="Instagram">
-                        <img src="images/linkedin.png" alt="LinkedIn">
-                        <img src="images/x.png" alt="X">
-                        <img src="images/whatsapp.png" alt="WhatsApp">
-                        <img src="images/messenger.png" alt="Messenger">
+                <div class="profile-header">
+                    <!-- Profile Image (Left) -->
+                    <img src="images/Niki.JPG" alt="Profile Picture" class="profile-picture">
+                    
+                    <!-- Name and Contact Info (Center) -->
+                    <div class="profile-info">
+                        <h1>Niki Hu</h1>
+                        <p class="contact-details">
+                            (857) 205-6667 <br>
+                            <a href="mailto:niki.hu04@gmail.com">niki.hu04@gmail.com</a>
+                        </p>
+                        <div class="social-icons">
+                            <img src="images/instagram.png" alt="Instagram">
+                            <img src="images/linkedin.png" alt="LinkedIn">
+                            <img src="images/x.png" alt="X">
+                            <img src="images/whatsapp.png" alt="WhatsApp">
+                            <img src="images/messenger.png" alt="Messenger">
+                        </div>
                     </div>
-                </div>
-            
-                <!-- Social Media Icons (Right) -->
                 
+                    <!-- Social Media Icons (Right) -->
+                    
+                </div>
+        </div>
+
+
+        <div class="section">
+
+            <h3 style="display: flex; align-items: center; gap: 10px;">
+                Updates
+                <button class="small-toggle-btn">🔄 (Updated on Feb 8th.)</button>
+            </h3>
+
+
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>🚀 Starting a new startup project (Dec. 2024)</span>
+                <span class="toggle-btn">▶</span>
             </div>
-    </div>
+            <div class="sub-content">
+                <p>📌 Training NLP models for MBTI classification.</p>
+                <p>🤝 Taking the role of a startup co-founder.</p>
+            </div>
 
-    <div class="section">
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>👨‍🏫 Taking a new role of CS 3510 TA.</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>🎓 Working for Georgia Institute of Technology College of Computing.</p>
+                <p>📖 Second class TAing for.</p>
+            </div>
 
-        <h3 style="display: flex; align-items: center; gap: 10px;">
-            Updates
-            <button class="small-toggle-btn">🔄 (Updated on Feb 3rd.)</button>
-        </h3>
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>🎾 Taking a new role of Squash @GT Vice President.</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>🏅 Aiming to organize practice sessions and participate in club suqash competitions</p>
+            </div>
 
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>𝕏 ﹩link weekly about to be a movie!</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>🎓 Working for Georgia Institute of Technology College of Computing.</p>
+                <p>📖 Second class TAing for.</p>
+            </div>
 
-        <div class="sub-item" onclick="toggleSubContent(this)">
-            <span>🚀 Starting a new startup project (Dec. 2024)</span>
-            <span class="toggle-btn">▶</span>
-        </div>
-        <div class="sub-content">
-            <p>📌 Meeting investors and doing survey for target customers</p>
-            <p>🤝 Taking the role of a startup co-founder.</p>
-        </div>
-
-        <div class="sub-item" onclick="toggleSubContent(this)">
-            <span>👧 Hosting 2025 Penn Entreperneurship Summit in March </span>
-            <span class="toggle-btn">▶</span>
-        </div>
-        <div class="sub-content">
-            <p>🎓 Co-President for Penn Wharton China Summit and Wharton China Association. </p>
-            <p>📖 Hosted events with ~80K views and ~1k audience. </p>
-        </div>
-
-        <div class="sub-item" onclick="toggleSubContent(this)">
-            <span>🎾 Playing squash and tennis tournaments at Penn</span>
-            <span class="toggle-btn">▶</span>
-        </div>
-        <div class="sub-content">
-            <p>🌞 Looking for private tutors and practice partners for squash.</p>
         </div>
 
-        <div class="sub-item" onclick="toggleSubContent(this)">
-            <span>𝕏 After their January 30th contract with the States, $BBAI has been up by ~30%. This month's KPI achieved and more to go! (Feb. 2rd, 2025)</span>
-            <span class="toggle-btn">▶</span>
-        </div>
-        <div class="sub-content">
-            <p>💰 Ocaml is an interesting language to learn. </p>
-            <p>📖 Reflection from reading Michel Foucault: geniuses are not the origin of changes, but the peak of changes (Dec. 2024)</p>
-        </div>
-
-    </div>
-    <div class="section">
-        <h3>Recent Connections</h3>
-        
-        <div class="sub-item" onclick="toggleSubContent(this)">
-            <span>📊 Work Dinner (Feb. 1st, 2025)</span>
-            <span class="toggle-btn">▶</span>
-        </div>
-        <div class="sub-content">
-            <p>🌺 Talked about Deepseek's innovation in CoT.</p>
-            <p>🚀 Talked about restaurant week and agreed on Sakana has the best sushi in Philly.</p>
-            <p>📆 Athena suggested to play squash together next weekend.</p>
-        </div>
-
-        <div class="sub-item" onclick="toggleSubContent(this)">
-            <span>📧 Ski Trip (Dec. 23th, 2024)</span>
-            <span class="toggle-btn">▶</span>
-        </div>
-        <div class="sub-content">
-            <p>🚀 Talked about why skiing is harder to master than snowboarding and X games. </p>
-            <p>🎿 Athena mentioned she's interested in learning more about ML and asked you to recommend some great sources.</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h3 style="display: flex; align-items: center; gap: 10px;">
-            Related News
-            <button id="toggleNewsBtn" class="small-toggle-btn">🔄</button>
-        </h3>
-        
-        <div class="sub-item news-item">
-            <a href="https://www.olympics.com/en/news/injured-eileen-gu-out-of-x-games" target="_blank">
-                <span class="news-link">Injured Eileen Gu out of X Games</span>
-            </a>
-        </div>
-
-        <div class="sub-item news-item">
-            <a href="https://www.tipranks.com/news/bigbear-ai-nysebbai-hugged-by-cantor-with-massive-upgrade-after-shares-leap-45" target="_blank">
-                <span class="news-link">BigBear.ai (NYSE:BBAI) Hugged by Cantor with Massive Upgrade after Shares Leap 45%</span>
-            </a>
-        </div>
+        <div class="section">
+            <h3>Recent Connections
+                <button class="small-toggle-btn" onclick="showLatestMeeting()">🔄 Updated on Feb 8th.</button>
+            </h3>
     
-        <div class="sub-item news-item" style="display: none;">
-            <a href="https://www.ycombinator.com/blog/announcing-yc-x25/" target="_blank">
-                <span class="news-link">Announcing YC X25, the spring 2025 batch</span>
-            </a>
+            <!-- Initially Hidden -->
+            <div id="latest-meeting" style="display: none;">
+                <div class="sub-item" onclick="toggleSubContent(this)">
+                    <span>📊 In-Person Meeting about Startup (Feb. 8th, 2025)</span>
+                    <span class="toggle-btn">▶</span>
+                </div>
+                <div class="sub-content">
+                    <p>🚀 You followed us with Niki to talk about her progress with the startup company Ethoscope.</p>
+                    <p>📆 Niki is planning to apply for Y Combinator Spring Batch 2025.</p>
+                </div>
+            </div>
+    
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>📊 Zoom Meeting (Jan. 15th, 2025)</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>🚀 You gave advice to Niki's startup project on developing a website as an AI contact list.</p>
+                <p>📆 You and Niki agreed to meet next week for further discussions.</p>
+            </div>
+    
+            <div class="sub-item" onclick="toggleSubContent(this)">
+                <span>📧 Email (Jan. 12th, 2025)</span>
+                <span class="toggle-btn">▶</span>
+            </div>
+            <div class="sub-content">
+                <p>📆 You set up a time to meet with Niki to talk about a new startup idea she is working on.</p>
+            </div>
         </div>
+<!-- 
+        <div class="section">
+            <h3>Related News</h3>
+            <div class="sub-item">
+                <a href="https://www.ajc.com/sports/georgia-tech/no-20-georgia-tech-women-win-at-miami/SJPL6NWOWBGNRMBNU6DIRGKYTY/" target="_blank">
+                    <span class="news-link">No. 20 Georgia Tech women win at Miami</span>
+                </a>
+            </div>
 
-        <div class="sub-item news-item" style="display: none;">
-            <a href="https://www.wtatennis.com/news/4204693/the-road-ahead-swiatek-sabalenka-battle-for-no1-zheng-seeks-redemption" target="_blank">
-                <span class="news-link">The road ahead: Swiatek, Sabalenka battle for No.1, Zheng seeks redemption</span>
-            </a>
-        </div>
+            <div class="sub-item">
+                <a href="https://www.ycombinator.com/blog/announcing-yc-x25/" target="_blank">
+                    <span class="news-link">Announcing YC X25, the spring 2025 batch</span>
+                </a>
+            </div>
+
+        </div> -->
+
+        <div class="section">
+            <h3 style="display: flex; align-items: center; gap: 10px;">
+                Related News
+                <button id="toggleNewsBtn" class="small-toggle-btn">🔄 (Updated on Feb 8th.)</button>
+            </h3>
+            
+            <div class="sub-item news-item">
+                <a href="https://www.ajc.com/sports/georgia-tech/no-20-georgia-tech-women-win-at-miami/SJPL6NWOWBGNRMBNU6DIRGKYTY/" target="_blank">
+                    <span class="news-link">No. 20 Georgia Tech women win at Miami</span>
+                </a>
+            </div>
+
+            <div class="sub-item news-item">
+                <a href="https://x.com/huniki97567/status/1886591836703113368?s=46" target="_blank">
+                    <span class="news-link">$PLTR earnings top estimates today! Let's goooooo!</span>
+                </a>
+            </div>
+        
+            <div class="sub-item news-item" style="display: none;">
+                <a href="https://www.ycombinator.com/blog/announcing-yc-x25/" target="_blank">
+                    <span class="news-link">Announcing YC X25, the spring 2025 batch</span>
+                </a>
+            </div>
         </div>
 
         <div class="section">
@@ -197,21 +221,21 @@
         <div class="section">
             <h3>Education</h3>
             <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>🏫 Tabor Academy (2018-2022)</span>
+                <span>🏫 Kent School (2019-2023)</span>
                 <span class="toggle-btn">▶</span>
             </div>
             <div class="sub-content">
-                <p>📍 Marion, MA, USA</p>
+                <p>📍 Kent, CT, USA</p>
                 <p>🎓 High School Diploma</p>
             </div>
 
             <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>🎓 University of Pennsylvania (2022-Current)</span>
+                <span>🎓 Georgia Institute of Technology (2023-Current)</span>
                 <span class="toggle-btn">▶</span>
             </div>
             <div class="sub-content">
-                <p>📍 Philadelphia, PA, USA</p>
-                <p>📚 Major: Philosophy and Computation and Cognition</p>
+                <p>📍 Atlanta, GA, USA</p>
+                <p>📚 Major: Computer Science</p>
             </div>
         </div>
         
@@ -220,27 +244,34 @@
             <h3>Experience</h3>
             
             <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>📊 Bank of America (2024)</span>
+                <span>📊 Bianfeng Games (2023-2024)</span>
                 <span class="toggle-btn">▶</span>
             </div>
             <div class="sub-content">
-                <p>💰 Investment Banking Summer Analyst</p>
-                <p>📍 Chicago, IL, USA</p>
+                <p>💻 Data Analysis Intern</p>
+                <p>📍 Remote</p>
             </div>
 
             <div class="sub-item" onclick="toggleSubContent(this)">
-                <span>👨‍💻 Penn Wharton China Summit & Wharton China Association (2023-2024)</span>
+                <span>👨‍💻 Georgia Institute of Technology College of Computing (2025-Current)</span>
                 <span class="toggle-btn">▶</span>
             </div>
             <div class="sub-content">
-                <p>💰 Co-President</p>
-                <p>📍 Philadelphia, PA, USA</p>
+                <p>🎓 CS 3510 TA</p>
+                <p>📍 Atlanta, GA, USA</p>
             </div>
         </div>
 
     </div>
     <div class="fixed-box">
         
+        <!-- <li class="home-item"><a href="home.html">🪴 HOME</a></li>
+ -->
+
+        <!-- <a href="import.html">
+            <button class="import-add-button">IMPORT</button>
+        </a> -->
+        <!-- <button class="import-add-button" id="importBtn"><a href="import.html">IMPORT</a></button> -->
         <button class="import-add-button"><a href="import.html">IMPORT</a></button>
     
         <button class="import-add-button onclick="openModal()" id="addBtn">ADD</button>
