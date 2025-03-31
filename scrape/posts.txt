@@ -1,0 +1,1 @@
+Extracted texts have been saved to extracted_posts.csv
