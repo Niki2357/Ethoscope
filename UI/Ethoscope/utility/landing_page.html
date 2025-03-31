@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ethoscope – Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Embedded CSS -->
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+      /* We'll use a top bar, left sidebar, main content, right panel. */
+      display: grid;
+      grid-template-rows: auto 1fr; /* top bar, then the main row */
+      height: 100vh;
+      overflow: hidden; /* avoid scrolling on the entire body, we’ll scroll in columns */
+    }
+
+    /* TOP BAR (Logo left + Search on the right) */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      height: 60px;
+      border-bottom: 1px solid #ccc;
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .top-bar-left img {
+      height: 30px;
+      width: auto;
+    }
+    .top-bar-left .brand-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .top-bar-right input {
+      width: 200px;
+      height: 34px;
+      padding: 0 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .top-bar-right button {
+      height: 34px;
+      padding: 0 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #ffe8cc; /* peach */
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* MAIN ROW: Sidebar + Content + Right Panel */
+    .main-row {
+      display: grid;
+      grid-template-columns: 240px 1fr 1fr; /* left sidebar, center content, right panel */
+      height: calc(100vh - 60px); /* fill rest of screen minus top bar */
+      overflow: hidden; /* we’ll let each column scroll individually if needed */
+    }
+
+    /* LEFT SIDEBAR */
+    .sidebar {
+      background-color: #fff;
+      border-right: 1px solid #ccc;
+      padding: 1rem 0;
+      overflow-y: auto; /* let sidebar scroll if it’s tall */
+    }
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+    }
+    .sidebar-logo img {
+      height: 40px;
+      width: auto;
+    }
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 0.5rem;
+    }
+    .contact-item {
+      cursor: pointer;
+      padding: 0.6rem 1rem;
+      transition: background 0.2s;
+    }
+    .contact-item:hover {
+      background-color: #f7f7f7;
+    }
+    .contact-item.selected {
+      background-color: #ffe8cc; /* peach highlight */
+      font-weight: bold;
+    }
+    .import-button {
+      display: block;
+      width: 80%;
+      margin: 1rem auto;
+      padding: 0.6rem 0;
+      border: none;
+      border-radius: 6px;
+      background-color: #ffe8cc;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* CENTER CONTENT */
+    .center-content {
+      background-color: #fafafa; /* Light grayish for contrast */
+      padding: 2rem;
+      overflow-y: auto; /* scroll if content is tall */
+    }
+    .center-content h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .center-content .sections {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    /* The peach "cards" */
+    .peach-card {
+      background-color: #FEF6ED;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      border: 1px solid #f8e6d5;
+    }
+    .peach-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      font-weight: bold;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .peach-card ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+    .peach-card p {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .recommendations-wrapper {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .rec-profile {
+      text-align: center;
+    }
+    .rec-profile img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+    }
+
+    /* RIGHT PANEL */
+    .right-panel {
+      background-color: #fff;
+      padding: 2rem;
+      overflow-y: auto; /* scroll if needed */
+      border-left: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* so "What can I help with?" can be near the top and chat bubble near bottom if desired */
+    }
+    .right-panel h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    /* The peach bubble with icons */
+    .chat-bubble {
+      background-color: #FEF6ED;
+      border-radius: 12px;
+      padding: 1rem;
+      border: 1px solid #f8e6d5;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-self: flex-end; /* or flex-start if you want it at top, you can adjust */
+    }
+    .chat-bubble-icons {
+      display: flex;
+      gap: 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR: Logo on left, Search bar on right -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <img src="images/big_logo_color.png" alt="Ethoscope Logo" />
+      <span class="brand-name">Ethoscope</span>
+    </div>
+    <div class="top-bar-right">
+      <input type="text" placeholder="YC Co-Founder" />
+      <button>SEARCH</button>
+    </div>
+  </div>
+
+  <!-- MAIN ROW: sidebar + center + right -->
+  <div class="main-row">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <!-- If you want to show a second logo here, uncomment:
+        <img src="images/big_logo_color.png" alt="Ethoscope Logo" />
+        <span>Ethoscope</span>
+        -->
+      </div>
+      <ul class="contact-list">
+        <li class="contact-item selected">Landing Page</li>
+        <li class="contact-item">Athena Zhong</li>
+        <li class="contact-item">Chen Peng</li>
+        <li class="contact-item">Lucy Lu</li>
+        <li class="contact-item">Niki Hu</li>
+        <li class="contact-item">Lila Montgomery</li>
+        <li class="contact-item">Evan Carter</li>
+        <li class="contact-item">Sophia Bennett</li>
+        <li class="contact-item">Liam Harrison</li>
+        <li class="contact-item">Olivia Reed</li>
+        <li class="contact-item">Noah Anderson</li>
+        <li class="contact-item">Ava Collins</li>
+        <li class="contact-item">Mia Sanders</li>
+      </ul>
+      <button class="import-button">IMPORT</button>
+    </div>
+
+    <!-- CENTER CONTENT -->
+    <div class="center-content">
+      <h1>
+        It’s February 1, 2025 <span style="font-size:1.4rem;">🍀</span><br>
+        Let’s see what’s on your radar today!
+      </h1>
+
+      <div class="sections">
+        <!-- Reminders Card -->
+        <div class="peach-card">
+          <h3>
+            <img src="images/notepad_icon.png" alt="Reminders" style="width:20px;height:20px;">
+            Reminders
+          </h3>
+          <ul>
+            <li>Prepare a birthday for <strong>@Athena Zhong</strong></li>
+            <li>Call <strong>@Brianna Lin</strong> at 9 PM today.</li>
+          </ul>
+        </div>
+
+        <!-- Updates Card -->
+        <div class="peach-card">
+          <h3>
+            <img src="images/cake_icon.png" alt="Updates" style="width:20px;height:20px;">
+            Updates
+          </h3>
+          <ul>
+            <li>It’s <strong>@Athena Zhong</strong>’s 22nd birthday!</li>
+            <li><strong>@Joseph Walxim</strong> has left Goldman Sachs and started a new job at Sequoia!</li>
+            <li><strong>@Steven Walxim</strong> has relocated from New York City to Singapore.</li>
+          </ul>
+        </div>
+
+        <!-- Recommendations Card -->
+        <div class="peach-card">
+          <h3>
+            <img src="images/users_icon.png" alt="Recommendations" style="width:20px;height:20px;">
+            Recommendations
+          </h3>
+          <div class="recommendations-wrapper">
+            <div class="rec-profile">
+              <img src="https://via.placeholder.com/70" alt="Profile">
+              <p><strong>@Emily Yu</strong><br>APM at Google</p>
+            </div>
+            <div class="rec-profile">
+              <img src="https://via.placeholder.com/70" alt="Profile">
+              <p><strong>@Lisa Li</strong><br>PhD Student at Harvard</p>
+            </div>
+            <div class="rec-profile">
+              <img src="https://via.placeholder.com/70" alt="Profile">
+              <p><strong>@Fiona Jiang</strong><br>PM at Microsoft</p>
+            </div>
+          </div>
+          <p>Click refresh for more people recommended to reconnect!</p>
+        </div>
+      </div> <!-- end .sections -->
+    </div> <!-- end .center-content -->
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+      <!-- Top area: “What can I help with?” -->
+      <div>
+        <h2>What can I help with?</h2>
+      </div>
+
+      <!-- Bottom area: a peach bubble with “Follow up on your added contact profile” and icons -->
+      <div class="chat-bubble">
+        <p style="margin:0;">Follow up on your added contact profile</p>
+        <div class="chat-bubble-icons">
+          <span title="Attach">📎</span>
+          <span title="Link">🌐</span>
+          <span title="Voice">🎤</span>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- end .main-row -->
+
+</body>
+</html>

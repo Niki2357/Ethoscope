@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethoscope Dashboard</title>
+    <link rel="stylesheet" href="style.css">  <!-- Link to your CSS file -->
+
+</head>
+<body>
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+        <ul class="contact-list">
+            <li class="logo-fixed-box">
+                <div class="logo">
+                    <img src="images/big_logo_black.png" alt="Logo" style="width: 200px; height: 46px">
+        
+                </div>
+            </li>
+            <li class="dummy-logo-fixed-box">dummy</li>
+            <!-- <li class="home-item"><a href="landing.html"></a><span>🪴 HOME</span></li> -->
+            <li class="home-item"><a href="home.html">🪴 HOME</a></li>
+            <li class="contact-item">
+                <img src="images/Athena.jpg" alt="Athena">
+                <a href="Athena.html"><span>Athena Zhong</span></a>
+            </li>
+            <li class="contact-item">
+                <img src="images/Chen.jpg" alt="Chen">
+                <a href="Chen.html"><span>Chen Peng</span></a>
+            </li>
+            <li class="contact-item"><img src="images/Lucy.jpg" alt="Lucy"><span>Lucy Lu</span></li>
+            <!-- <li class="contact-item selected"><img src="images/Niki.JPG" alt="Niki"><span>Niki Hu</span></li> -->
+            <li class="contact-item">
+                <img src="images/Niki.JPG" alt="Niki">
+                <a href="Niki.html"><span>Niki Hu</span></a>
+            </li>
+            <li class="contact-item">
+                <img src="images/Gary.png" alt="Gary">
+                <a href="Gary.html"><span>Gary Wang</span></a>
+            </li>
+            <li class="contact-item"><img src="images/2.png" alt="Lila"><span>Lila Montgomery</span></li>
+            <li class="contact-item"><img src="images/3.jpg" alt="Evan"><span>Evan Carter</span></li>
+            <li class="contact-item"><img src="images/13.jpg" alt="Emily"><span>Emily Jiang</span></li>
+            <li class="contact-item"><img src="images/1.png" alt="Sophia"><span>Sophia Bennett</span></li>
+            <li class="contact-item"><img src="images/4.jpg" alt="Liam"><span>Liam Kim</span></li>
+            <li class="contact-item"><img src="images/5.jpg" alt="Olivia"><span>Olivia Reed</span></li>
+            <li class="contact-item"><img src="images/6.jpg" alt="Noah"><span>Noah Anderson</span></li>
+            <li class="contact-item"><img src="images/7.jpg" alt="Ava"><span>Ava Collins</span></li>
+            <li class="contact-item"><img src="images/8.jpg" alt="Mia"><span>Mia Sanders</span></li>
+            <li class="contact-item"><img src="images/9.jpg" alt="James"><span>James Porter</span></li>
+            <li class="contact-item"><img src="images/10.jpg" alt="Amelia"><span>Amelia Brooks</span></li>
+            <li class="contact-item"><img src="images/11.jpg" alt="Charlotte"><span>Charlotte Morgan</span></li>
+            <li class="contact-item"><img src="images/12.jpg" alt="Ella"><span>Ella Carter</span></li>
+        </ul>
+        <span class="fixed-box"></span>
+        <!-- <button class="import-button">IMPORT</button> -->
+    </div>
+
+    <div class="fixed-box">
+        <button class="import-add-button"><a href="import.html">IMPORT</a></button>
+        <button class="import-add-button" onclick="openModal()" id="addBtn">ADD</button>
+    </div>
+
+
+<!-- Pop-Up Modal -->
+<div id="popup-modal" class="modal">
+    <div class="modal-content">
+        <!-- Close Button -->
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+
+        <p class="orange-h1">Add New Contact</p>
+
+        <!-- Full Name Input -->
+        <div class="form-group">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <input type="text" id="contact-name" placeholder="Full Name">
+        </div>
+
+        <!-- LinkedIn URL Input -->
+        <div class="form-group">
+            <img src="images/linkedin.png" alt="LinkedIn" class="input-icon">
+            <input type="url" id="contact-linkedin" placeholder="LinkedIn URL">
+        </div>
+
+        <!-- Email Input -->
+        <div class="form-group">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <input type="email" id="contact-email" placeholder="Email Address">
+        </div>
+
+        <!-- Phone Number Input -->
+        <div class="form-group">
+            <img src="images/phone.png" alt="US Flag" class="input-icon">
+            <input type="tel" id="contact-phone" placeholder="Phone Number">
+        </div>
+
+        <!-- Add More Details -->
+        <div class="add-details">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M5 12h14"></path>
+            </svg>
+            <span>Add More Details</span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="save-cancel-button" onclick="saveContact()">Save</button>
+            <button class="save-cancel-button" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="chatBot-import">
+
+        <div class="chatBot-inner-import">
+            <div class="chatbot-header">
+                <div class="chat-header">EthoBot</div>
+                <!-- <span alt="Close" 
+                        id="cross" 
+                        onclick="cancel()">X</span> -->
+            </div>
+
+
+    
+            <ul class="chatbox">
+                <li class="chat-incoming chat">
+                    <p>Hey! How can I assist you today?</p>
+                </li>
+            </ul>
+
+            <div class="chat-options">
+                <div class="option-box">
+                  Include this for personality analysis
+                  <input type="checkbox">
+                </div>
+                <div class="option-box">
+                  + Add the contact(s) to sync with
+                </div>
+             </div>
+    
+
+             <div class="chat-input">
+                <div class="chat-input-icons">
+
+                    <!-- <img src="images/voice_input.png" alt="Voice" title="Voice Input"> -->
+                    <a href="voice-import.html" target="_blank">
+                        <img src="images/voice_input.png" alt="Voice" title="Voice Input">
+                    </a>
+
+                    
+                    <label for="fileUpload">
+                        <img src="images/attachment.png" alt="Attach" title="Attach File">
+                    </label>
+                    <input type="file" id="fileUpload" class="hidden-file-input">
+                </div>
+                <textarea rows="10" cols="17" placeholder="Enter a message..."></textarea>
+                <button id="sendBTN" class="send-button-import">Send</button>
+            </div>
+
+<!--               
+            <div class="chat-input">
+                <div class="chat-input-icons">
+                    <img src="images/attachment.png" alt="Attach" title="Attach File">
+                    <img src="images/voice_input.png" alt="Voice" title="Voice Input">
+                  </div>
+                <textarea rows="10" cols="17"
+                            placeholder="Enter a message..."></textarea>
+                <button id="sendBTN" class="send-button-import">Send</button>
+            </div> -->
+
+        </div>
+        
+        
+    </div>
+    
+    <script src="script.js" defer></script>
+
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethoscope Dashboard</title>
+    <link rel="stylesheet" href="style.css">  <!-- Link to your CSS file -->
+
+</head>
+<body>
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+
+        
+        <ul class="contact-list">
+            <li class="logo-fixed-box">
+                <div class="logo">
+                    <img src="images/big_logo_black.png" alt="Logo" style="width: 200px; height: 46px">
+        
+                </div>
+            </li>
+            <li class="dummy-logo-fixed-box">dummy</li>
+            <!-- <li class="home-item"><a href="home.html"></a><span>🪴 HOME</span></li> -->
+            <li class="home-item"><a href="home.html">🪴 HOME</a></li>
+            <li class="contact-item">
+                <img src="images/Athena.jpg" alt="Athena">
+                <a href="Athena.html"><span>Athena Zhong</span></a>
+            </li>
+            <li class="contact-item">
+                <img src="images/Chen.jpg" alt="Chen">
+                <a href="Chen.html"><span>Chen Peng</span></a>
+            </li>
+            <li class="contact-item"><img src="images/Lucy.jpg" alt="Lucy"><span>Lucy Lu</span></li>
+            <!-- <li class="contact-item selected"><img src="images/Niki.JPG" alt="Niki"><span>Niki Hu</span></li> -->
+            <li class="contact-item">
+                <img src="images/Niki.JPG" alt="Niki">
+                <a href="Niki.html"><span>Niki Hu</span></a>
+            </li>
+            <li class="contact-item">
+                <img src="images/Gary.png" alt="Gary">
+                <a href="Gary.html"><span>Gary Wang</span></a>
+            </li>
+            <li class="contact-item"><img src="images/2.png" alt="Lila"><span>Lila Montgomery</span></li>
+            <li class="contact-item"><img src="images/3.jpg" alt="Evan"><span>Evan Carter</span></li>
+            <li class="contact-item"><img src="images/13.jpg" alt="Emily"><span>Emily Jiang</span></li>
+            <li class="contact-item"><img src="images/1.png" alt="Sophia"><span>Sophia Bennett</span></li>
+            <li class="contact-item"><img src="images/4.jpg" alt="Liam"><span>Liam Kim</span></li>
+            <li class="contact-item"><img src="images/5.jpg" alt="Olivia"><span>Olivia Reed</span></li>
+            <li class="contact-item"><img src="images/6.jpg" alt="Noah"><span>Noah Anderson</span></li>
+            <li class="contact-item"><img src="images/7.jpg" alt="Ava"><span>Ava Collins</span></li>
+            <li class="contact-item"><img src="images/8.jpg" alt="Mia"><span>Mia Sanders</span></li>
+            <li class="contact-item"><img src="images/9.jpg" alt="James"><span>James Porter</span></li>
+            <li class="contact-item"><img src="images/10.jpg" alt="Amelia"><span>Amelia Brooks</span></li>
+            <li class="contact-item"><img src="images/11.jpg" alt="Charlotte"><span>Charlotte Morgan</span></li>
+            <li class="contact-item"><img src="images/12.jpg" alt="Ella"><span>Ella Carter</span></li>
+        </ul>
+    </div>
+
+    <!-- Middle Content -->
+    <div class="conversation">
+        <div class="message lucy">
+            <strong>Lucy:</strong> Did you catch anything about that new R1 DeepSeek paper on AI?
+        </div>
+    
+        <div class="message chen">
+            <strong>Chen:</strong> I saw some buzz about it, but I didn’t really get into the details. It's about those big AI systems, right?
+        </div>
+    
+        <div class="message lucy">
+            <strong>Lucy:</strong> Yeah, it's about those large language models I keep geeking out about. This new one, R1 DeepSeek, is a step up in how well it understands and uses language. It's kind of like how a really smart assistant gets even smarter.
+        </div>
+    
+        <div class="message chen">
+            <strong>Chen:</strong> Oh, cool! I can see how that would be a big deal for things like customer support or even making sense of all the research articles we have piled up.
+        </div>
+    
+        <div class="message lucy">
+            <strong>Lucy:</strong> Exactly! And for you, imagine it helping out by sorting through all the medical research to figure out tailored treatments for patients.
+        </div>
+    
+        <div class="message chen">
+            <strong>Chen:</strong> That would be amazing. Makes me wonder about the ethical side, though. With tech that powerful, we'd have to be really careful about how it's used, right?
+        </div>
+    
+        <div class="message lucy">
+            <strong>Lucy:</strong> For sure, there’s a lot of talk about making sure these AI systems are used the right way. Transparency, fairness, and security are all big topics.
+        </div>
+    
+        <div class="message chen">
+            <strong>Chen:</strong> Good to hear that’s on the radar. It makes me a bit more hopeful about where things could go with integrating AI in healthcare and other serious areas.
+        </div>
+    
+        <div class="message lucy">
+            <strong>Lucy:</strong> Absolutely. If you're interested, I can send you some more stuff to read about R1 DeepSeek. It might give you a clearer picture of what it’s all about.
+        </div>
+    
+        <div class="message chen">
+            <strong>Chen:</strong> I’d like that! It’s good to stay in the loop, even if it’s not my main field. Never know when this info might come in handy!
+        </div>
+    
+        <div class="message lucy">
+            <strong>Lucy:</strong> Totally, the crossover possibilities are endless. I’ll shoot that info over to you!
+        </div>
+    </div>
+    <div class="fixed-box">
+        
+        <!-- <li class="home-item"><a href="home.html">🪴 HOME</a></li>
+ -->
+
+        <!-- <a href="import.html">
+            <button class="import-add-button">IMPORT</button>
+        </a> -->
+        <!-- <button class="import-add-button" id="importBtn"><a href="import.html">IMPORT</a></button> -->
+        <button class="import-add-button"><a href="import.html">IMPORT</a></button>
+    
+        <button class="import-add-button onclick="openModal()" id="addBtn">ADD</button>
+    </div>
+
+        <!-- Add Button (Trigger for the Pop-Up) -->
+    
+
+<!-- Pop-Up Modal -->
+<div id="popup-modal" class="modal">
+    <div class="modal-content">
+        <!-- Close Button -->
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+
+        <p class="orange-h1">Add New Contact</p>
+
+        <!-- Full Name Input -->
+        <div class="form-group">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <input type="text" id="contact-name" placeholder="Full Name">
+        </div>
+
+        <!-- LinkedIn URL Input -->
+        <div class="form-group">
+            <img src="images/linkedin.png" alt="LinkedIn" class="input-icon">
+            <input type="url" id="contact-linkedin" placeholder="LinkedIn URL">
+        </div>
+
+        <!-- Email Input -->
+        <div class="form-group">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <input type="email" id="contact-email" placeholder="Email Address">
+        </div>
+
+        <!-- Phone Number Input -->
+        <div class="form-group">
+            <img src="images/phone.png" alt="US Flag" class="input-icon">
+            <input type="tel" id="contact-phone" placeholder="Phone Number">
+        </div>
+
+        <!-- Add More Details -->
+        <div class="add-details">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M5 12h14"></path>
+            </svg>
+            <span>Add More Details</span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="save-cancel-button" onclick="saveContact()">Save</button>
+            <button class="save-cancel-button" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+    <div class="chatBot">
+
+        <div class="chatBot-inner">
+            <div class="chatbot-header">
+                <div class="chat-header">EthoBot</div>
+                <!-- <span alt="Close" 
+                        id="cross" 
+                        onclick="cancel()">X</span> -->
+            </div>
+    
+            <ul class="chatbox">
+                <li class="chat-incoming chat">
+                    <p>Hey! How can I assist you today?</p>
+                </li>
+            </ul>
+    
+            <div class="chat-input">
+                <textarea rows="0" cols="17"
+                            placeholder="Enter a message..."></textarea>
+                <button class="send-button" id="sendBTN">Send</button>
+            </div>
+
+        </div>
+        
+        
+    </div>
+    
+    <script src="script.js" defer></script>
+
+</body>
+</html>
